@@ -1,24 +1,23 @@
-## README
+## Motivate
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+####*"Every accomplishment begins with the decision to try."*
+####-Chinese proverb
 
-Things you may want to cover:
+Motivate is a web and mobile application that gives motivation to those who seek it. Motivation comes from anywhere and now you can share it with anyone.
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+System
 
-* Database creation
+* Ruby 2.3.0 on Rails 5
 
-* Database initialization
+* PostgreSQL
+
+<!-- * Database initialization
 
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
+ -->

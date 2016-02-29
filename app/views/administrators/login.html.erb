@@ -1,7 +1,7 @@
 <h1>Login Page</h1>
 
-<!-- may have to change user_type -->
-<%= form_for(:user_type, url: administrators_login_path) do |f| %>
+<%= @error.full_message.to_sentence %>
+<%= form_for(:session, url: administrators_login_path) do |f| %>
 	<%= f.label :email %>
 	<%= f.text_field :email %><br />
 

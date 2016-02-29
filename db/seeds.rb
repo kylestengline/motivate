@@ -13,19 +13,21 @@ User.destroy_all
 
 #a = 
 Administrator.create!(
+	name: 'Kyle Stengline',
 	email: ENV["ADMINISTRATOR_EMAIL"],
 	password: ENV["ADMINISTRATOR_PASSWORD"]
 )
-# a.save!(validate: false)
+# # # a.save!(validate: false)
 
 15.times do |user| 
-#u =	
+# #u =	
 		User.create!(
+		user_name: Faker::Name.first_name,
 		email: Faker::Internet.free_email,
 		password: 'user',
 		administrator_id: '1'
 		)
-# u.save!(validate: false)
+# # u.save!(validate: false)
 end
 
 Post.create!([
@@ -40,7 +42,7 @@ Post.create!([
 	{author: "Nelson Mandela", content: "It always seems impossible until it's done.", user_id: rand(1..15), votes: Faker::Number.number(1)}, 
 	{author: "George M. Moore Jr.", content: "A winner is just a loser who tried one more time.", user_id: rand(1..15), votes: Faker::Number.number(1)}, 
 	{author: "Japanese Proverb", content: "Fall down seven times, get up eight.", user_id: rand(1..15), votes: Faker::Number.number(1)}, 
-	{author: "Napoleon Hill", content: "Nothing can be called failure until you accept it as such.", user_id: rand(1..15), votes: Faker::Number.number(1)}, 
+	{author: "Napoleon Hill", content: "Nothing can be called failure until you accept it as such.", user_id: rand(1..15), votes: Faker::Number.number(1)},
 	{author: "Winston Churchill", content: "If you're going through hell keep going.", user_id: rand(1..15), votes: Faker::Number.number(1)}, 
 	{author: "Jim Rohn", content: "Don't wish it were easier, wish you were better.", user_id: rand(1..15), votes: Faker::Number.number(1)}, 
 	{author: "Socrates", content: "The secret of change is to focus all of your energy, not on fighting the old, but on building the new.", user_id: rand(1..15), votes: Faker::Number.number(1)}

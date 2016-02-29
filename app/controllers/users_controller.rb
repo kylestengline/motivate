@@ -12,9 +12,9 @@ class UsersController < ApplicationController
   end
 
   def login
-    user = User.find_by(email: params['email'])
+    user = User.find_by(email: params['session']['email'])
 
-    if user && admin_user.authenticate(params['password'])
+    if user && user.authenticate(params['session']['password'])
       session[:user_type] = 'User'
       session[:user_id] = user.id
       @user = session[:email]
@@ -32,6 +32,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
     @posts = Post.find(params[:id])
   end
 

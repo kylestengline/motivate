@@ -11,9 +11,9 @@ class AdministratorsController < ApplicationController
   end
 
   def login
-    admin_user = Administrator.find_by(email: params['email'])
+    admin_user = Administrator.find_by(email: params['session']['email'])
 
-    if admin_user && admin_user.authenticate(params['password'])
+    if admin_user && admin_user.authenticate(params['session']['password'])
       session[:user_type] = 'Administrator'
       session[:user_id] = admin_user.id
       @admin = session[:email]
@@ -30,6 +30,7 @@ class AdministratorsController < ApplicationController
   # GET /administrators/1
   # GET /administrators/1.json
   def show
+    @administrator = Administrator.find(params[:id])
     flash[:success] = "Logged In!"
     @users = User.find(params[:id])
   end

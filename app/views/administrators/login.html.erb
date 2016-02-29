@@ -1,0 +1,12 @@
+<h1>Login Page</h1>
+
+<!-- may have to change user_type -->
+<%= form_for(:user_type, url: administrators_login_path) do |f| %>
+	<%= f.label :email %>
+	<%= f.text_field :email %><br />
+
+	<%= f.label :password %>
+	<%= f.password_field :password %><br />
+
+	<%= f.submit "Log Me In. Please and Thanks!" %>
+	<% end %>

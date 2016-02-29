@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+
 	root 'welcome#index'
+  
+	get '/administrators/login' => 'administrators#login'
+	post '/administrators/login' => 'administrators#login'
+
+	get '/users/login' => 'users#login'
+	post '/users/login' => 'users#login'
+
+
   resources :comments
   resources :posts
   resources :users

@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :set_user, only: [:show, :login]
+
+  before_action except: [:show, :login] do
+    redirect_to users_login_path unless authorized?
+  end
 
   # GET /users
   # GET /users.json
@@ -7,9 +11,28 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def login
+    user = User.find_by(email: params['email'])
+
+    if user && admin_user.authenticate(params['password'])
+      session[:user_type] = 'User'
+      session[:user_id] = user.id
+      @user = session[:email]
+
+      cookies[:email] = user.email
+      cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
+      # binding.pry
+      redirect_to user_path(user)
+    else
+      @error = true
+      render :login
+    end
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
+    @posts = Post.find(params[:id])
   end
 
   # GET /users/new
@@ -65,6 +88,10 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def authorized?
+      !current_user.nil? || current_user.is_a?(Administrator)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

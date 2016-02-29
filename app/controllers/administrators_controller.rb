@@ -1,15 +1,37 @@
 class AdministratorsController < ApplicationController
-  before_action :set_administrator, only: [:show, :edit, :update, :destroy]
+  # before_action :set_administrator, only: [:show, :login]
 
+    before_action except: [:show, :login] do
+      redirect_to administrators_login_path unless authorized?
+    end
   # GET /administrators
   # GET /administrators.json
   def index
     @administrators = Administrator.all
   end
 
+  def login
+    admin_user = Administrator.find_by(email: params['email'])
+
+    if admin_user && admin_user.authenticate(params['password'])
+      session[:user_type] = 'Administrator'
+      session[:user_id] = admin_user.id
+      @admin = session[:email]
+
+      cookies[:email] = admin_user.email
+      cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
+      redirect_to administrator_path(admin_user)
+    else
+      @error = true
+      render :login
+    end
+  end
+
   # GET /administrators/1
   # GET /administrators/1.json
   def show
+    flash[:success] = "Logged In!"
+    @users = User.find(params[:id])
   end
 
   # GET /administrators/new
@@ -53,18 +75,22 @@ class AdministratorsController < ApplicationController
 
   # DELETE /administrators/1
   # DELETE /administrators/1.json
-  def destroy
-    @administrator.destroy
-    respond_to do |format|
-      format.html { redirect_to administrators_url, notice: 'Administrator was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @administrator.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to administrators_url, notice: 'Administrator was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_administrator
       @administrator = Administrator.find(params[:id])
+    end
+
+    def authorized?
+      !current_user.nil? || current_user.is_a?(Administrator)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

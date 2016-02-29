@@ -11,20 +11,24 @@ Comment.destroy_all
 Post.destroy_all
 User.destroy_all
 
-Administrator.create(
+#a = 
+Administrator.create!(
 	email: ENV["ADMINISTRATOR_EMAIL"],
 	password: ENV["ADMINISTRATOR_PASSWORD"]
 )
+# a.save!(validate: false)
 
 15.times do |user| 
-	User.create(
+#u =	
+		User.create!(
 		email: Faker::Internet.free_email,
 		password: 'user',
 		administrator_id: '1'
 		)
+# u.save!(validate: false)
 end
 
-Post.create([
+Post.create!([
 	{author: "Earl Nightingale", content: "When you judge others, you do not define them; you define yourself.", user_id: rand(1..15), votes: Faker::Number.number(1)}, 
 	{author: "Jim Carrey", content: "You can fail at what you don't want. So you might as well take a chance on doing what you love.", user_id: rand(1..15), votes: Faker::Number.number(1)}, 
 	{author: "Maya Angelou", content: "You alone are enough. You have nothing to prove.", user_id: rand(1..15), votes: Faker::Number.number(1)}, 
@@ -43,7 +47,7 @@ Post.create([
 	])
 
 15.times do |comment| 
-	Comment.create(
+	Comment.create!(
 		post_id: rand(1..15), 
 		user_id: rand(1..15), 
 		content: Faker::Lorem.paragraph,
@@ -51,6 +55,10 @@ Post.create([
 		)
 end
 
+p "Created #{Administrator.count} Administrators"
+p "Created #{User.count} Users"
+p "Created #{Comment.count} Comment"
+p "Created #{Post.count} Posts"
 
 
 

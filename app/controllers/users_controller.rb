@@ -12,20 +12,22 @@ class UsersController < ApplicationController
   end
 
   def login
-    user = User.find_by(email: params['session']['email'])
+    if params['session']
+      user = User.find_by(email: params['session']['email'])
 
-    if user && user.authenticate(params['session']['password'])
-      session[:user_type] = 'User'
-      session[:user_id] = user.id
-      @user = session[:email]
+      if user && user.authenticate(params['session']['password'])
+        session[:user_type] = 'User'
+        session[:user_id] = user.id
+        @user = session[:email]
 
-      cookies[:email] = user.email
-      cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
-      # binding.pry
-      redirect_to user_path(user)
-    else
-      @error = true
-      render :login
+        cookies[:email] = user.email
+        cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
+        # binding.pry
+        redirect_to user_path(user)
+      else
+        @error = true
+        render :login
+      end
     end
   end
 

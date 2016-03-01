@@ -1,9 +1,9 @@
 class AdministratorsController < ApplicationController
   # before_action :set_administrator, only: [:show, :login]
 
-    before_action except: [:show, :login] do
-      redirect_to administrators_login_path unless authorized?
-    end
+    # before_action except: [:login, :login_form] do
+    #   redirect_to administrators_login_form_path unless authorized?
+    # end
   # GET /administrators
   # GET /administrators.json
   def index
@@ -12,18 +12,17 @@ class AdministratorsController < ApplicationController
 
   def login
     admin_user = Administrator.find_by(email: params['session']['email'])
-
     if admin_user && admin_user.authenticate(params['session']['password'])
       session[:user_type] = 'Administrator'
       session[:user_id] = admin_user.id
       @admin = session[:email]
 
       cookies[:email] = admin_user.email
-      cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
+      # cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
       redirect_to administrator_path(admin_user)
     else
       @error = true
-      render :login
+      render :login_form
     end
   end
 
@@ -32,7 +31,7 @@ class AdministratorsController < ApplicationController
   def show
     @administrator = Administrator.find(params[:id])
     flash[:success] = "Logged In!"
-    @users = User.find(params[:id])
+    # @users = User.find(params[:id])
   end
 
   # GET /administrators/new
@@ -73,6 +72,10 @@ class AdministratorsController < ApplicationController
       end
     end
   end
+
+  # def logout
+  #   logout
+  # end
 
   # DELETE /administrators/1
   # DELETE /administrators/1.json

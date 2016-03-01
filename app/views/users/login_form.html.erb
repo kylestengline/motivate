@@ -1,12 +1,12 @@
-<h1>Login Page</h1>
+<h1>Login</h1>
 
-<%= @error.full_message.to_sentence %>
-<%= form_for(:session, url: administrators_login_path) do |f| %>
+<%#= @user.error.full_message.to_sentence %>
+<%= form_for(:session, url: users_login_path) do |f| %>
 	<%= f.label :email %>
 	<%= f.text_field :email %><br />
 
 	<%= f.label :password %>
 	<%= f.password_field :password %><br />
-
+	<%#= binding.pry %>
 	<%= f.submit "Log Me In. Please and Thanks!" %>
 	<% end %>

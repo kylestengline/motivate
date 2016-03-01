@@ -4,12 +4,15 @@ Rails.application.routes.draw do
 
 	root 'welcome#index'
   
-	get '/administrators/login' => 'administrators#login'
+	get '/administrators/login_form' => 'administrators#login_form'
 	post '/administrators/login' => 'administrators#login'
 
-	get '/users/login' => 'users#login'
-	post '/users/login' => 'users#login'
+	get '/users/login_form' => 'users#login_form'
+	post 'users/login' => 'users#login'
 
+  get 'logout' => 'sessions#destroy'
+  post'logout' => 'sessions#destroy'
+  delete 'logout' => 'sessions#destroy'
 
   resources :comments
   resources :posts

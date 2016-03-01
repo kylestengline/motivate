@@ -1,14 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+<script type="text/javascript">
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#notice').remove();
+	}, 1000);
+})
+</script>
+
 <p>
   <strong>Title:</strong>
-  <%= @post.title %>
+  <em><%= @post.title %></em>
 </p>
 
 <p>
   <strong>Content:</strong>
-  <%= @post.content %>
+  <em>"<%= @post.content %>"</em>
+  -<%= @post.author %>
 </p>
+
+<p>
+  <strong>Notes from <%= @post.user.user_name %>:</strong>
+</p>
+<p><%= @post.story %></p>
 
 <p>
   <strong>Votes:</strong>
@@ -17,7 +31,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post.user_id %>
+  <%= @post.user.user_name %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

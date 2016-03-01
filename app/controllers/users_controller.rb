@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       
       redirect_to user_path(user)
     else
-      @user 
+      @error = true
       render :login_form
     end
   end
@@ -34,7 +34,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    # @posts = Post.find(params[:id]) show posts by this user.
+    @posts = Post.where(user_id: params[:id])
+    # show posts by this user.
   end
 
   # GET /users/new

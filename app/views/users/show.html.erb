@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+  <strong>Welcome,</strong>
+  <%= @user.user_name %>
 </p>
 
+<% @posts.each do |p| %>
+<h3><em>"<%= link_to p.content, post_path(p.id) %>"</em></h3>
+<h3><em> - <%= p.author %></em></h3>
+<h3>Votes: <%= p.votes %></h3>
+<h3>Notes: <%= p.story %></h3>
+<% end %>
+
+<% if session[:user_type] == 'Administrator' %>
 <p>
   <strong>Administrator:</strong>
   <%= @user.administrator_id %>
 </p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %> | 

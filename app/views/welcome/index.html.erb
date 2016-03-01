@@ -1,12 +1,12 @@
-<%= @posts.each do |p| %>
-<h3><em>"<%= p.content %>"</h3>
-<h3><em><%= p.author %></h3>
+<% @posts.each do |p| %>
+<h3><em>"<%= link_to p.content, post_path(p.id) %>"</em></h3>
+<h3><em> - <%= p.author %></em></h3>
 <h3>Votes: <%= p.votes %></h3>
-<h3>Posted By: Someone<%#= @user_name %></h3>
-
-----------------------------------------------------------------------------------------------------------
-
+<h3>Posted By: <%= p.user.user_name %></h3>
+<h3>Notes: <%= p.story %></h3>
+-------------------------------------------------------------------------------
 <% end %>
+
 
 <h2><%= link_to "Administrator Login", administrators_login_form_path  %></h2>
 <h2><%= link_to "User Login", users_login_form_path %></h2>

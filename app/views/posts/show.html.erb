@@ -16,12 +16,10 @@ $(document).ready(function(){
 <p>
   <strong>Content:</strong>
   <em>"<%= @post.content %>"</em>
+  <% #binding.pry %>
   -<%= @post.author %>
 </p>
 
-<p>
-  <strong>Notes from <%= @post.user.user_name %>:</strong>
-</p>
 <p><%= @post.story %></p>
 
 <p>
@@ -29,10 +27,7 @@ $(document).ready(function(){
   <%= @post.votes %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.user_name %>
-</p>
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
 #     end
 #   end
 
- # 	def logout 
- # 		session.delete(:user_id)
-	# 	@current_user = nil
-	# 	reset_session
-	# end
+#  	def logout 
+#  		session.delete(:user_id)
+# 		@current_user = nil
+# 	# 	reset_session
+# 	end
 end

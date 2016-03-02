@@ -1,12 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#notice').remove();
+  }, 1000);
+})
+</script>
+
 <h1>Administrators</h1>
 
 <table>
   <thead>
     <tr>
       <th>Email</th>
-      <th>Password</th>
+      <th>Profile</th>
       <th colspan="3"></th>
     </tr>
   </thead>

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def current_user
     case session[:user_type]
       when 'Administrator' then Administrator.find_by(id: session[:user_id])
-      when 'User' then User.find_by(id: session[:user_id])
+      # when 'User' then User.find_by(id: session[:user_id])
     end
   end
 

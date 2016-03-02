@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 	get '/administrators/login_form' => 'administrators#login_form'
 	post '/administrators/login' => 'administrators#login'
 
-	get '/users/login_form' => 'users#login_form'
-	post 'users/login' => 'users#login'
+	# get '/users/login_form' => 'users#login_form'
+	# post 'users/login' => 'users#login'
 
   get 'logout' => 'sessions#destroy'
   post'logout' => 'sessions#destroy'

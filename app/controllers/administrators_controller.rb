@@ -31,8 +31,8 @@ class AdministratorsController < ApplicationController
   def show
     @administrator = Administrator.find(params[:id])
     flash[:notice] = "Successfully Logged In!"
+    @posts = Post.all
     # @users = User.all
-    # @posts = Post.all
   end
 
   # GET /administrators/new
@@ -74,9 +74,10 @@ class AdministratorsController < ApplicationController
     end
   end
 
-  # def logout
-  #   logout
-  # end
+  def logout
+    session.delete[:user_id]
+    @current_user = nil
+  end
 
   # DELETE /administrators/1
   # DELETE /administrators/1.json

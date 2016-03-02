@@ -1,7 +1,7 @@
 module SessionsHelper
-
-	def login#(user)
-		session[:user_id] = user.id
+#(user)
+	def login
+		session[:user_id] = administrator.id
 	end
 
 	def logged_in?
@@ -9,8 +9,9 @@ module SessionsHelper
 	end
 
 	def logout
+		# binding.pry
 		session.delete(:user_id)
-		@current_user = nil
-		# reset_session
+		current_user = nil
+		reset_session
 	end
 end

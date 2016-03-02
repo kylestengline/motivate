@@ -2,13 +2,18 @@
 <h3><em>"<%= link_to p.content, post_path(p.id) %>"</em></h3>
 <h3><em> - <%= p.author %></em></h3>
 <h3>Votes: <%= p.votes %></h3>
-<h3>Posted By: <%= p.user.user_name %></h3>
-<h3>Notes: <%= p.story %></h3>
--------------------------------------------------------------------------------
+<h3>Posted On: <%#= show time posted %></h3>
+<h3>Notes: <%= p.story %></h3><br />
 <% end %>
 
+<%# if session[:user_type] = 'Administrator' %>
+	<center><%= link_to 'Profile', administrators_path %></center>
+	<center><%= link_to 'Log Out', logout_path %></center>
 
-<h2><%= link_to "Administrator Login", administrators_login_form_path  %></h2>
-<h2><%= link_to "User Login", users_login_form_path %></h2>
-<h2><%= link_to "Sign Up", new_user_path %></h2>
+<%# elsif session[:user_type] = 'User' %>
+	<!-- <center><%#= link_to 'Profile', users_path %><center> -->
+	<!-- <center><%#= link_to 'Log Out', logout_path %></center> -->
+<%# else %>
+	<h2><center><%= link_to "Administrator Login", administrators_login_form_path  %></center></h2>
+<%# end %>
 

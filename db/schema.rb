@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301160217) do
+ActiveRecord::Schema.define(version: 20160302175105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,14 @@ ActiveRecord::Schema.define(version: 20160301160217) do
     t.text     "content"
     t.integer  "votes"
     t.string   "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "author"
     t.text     "story"
+    t.integer  "administrator_id"
   end
+
+  add_index "posts", ["administrator_id"], name: "index_posts_on_administrator_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -53,4 +56,5 @@ ActiveRecord::Schema.define(version: 20160301160217) do
     t.string   "user_name"
   end
 
+  add_foreign_key "posts", "administrators"
 end

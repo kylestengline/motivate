@@ -1,0 +1,14 @@
+<h1>Motivate</h1>
+	<div id="messages">
+		<%#= render @user %>
+		<%= render @messages %>
+</div>
+
+<form>
+  <input type="text" id="user" placeholder="Optional Username">
+    <br>
+	<textarea id ="say" data-behavior="room_speaker" placeholder="Say Anything"></textarea>
+</form>
+
+<center><%= link_to 'Motivate', posts_path %></center>
+<center><%= link_to 'Homepage', root_path %></center>

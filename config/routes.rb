@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rooms/show'
+
   get 'sessions/new'
 
 	root 'welcome#index'
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
 
 	# get '/users/login_form' => 'users#login_form'
 	# post 'users/login' => 'users#login'
-
+  
   get 'logout' => 'sessions#destroy'
   post'logout' => 'sessions#destroy'
   delete 'logout' => 'sessions#destroy'
@@ -19,7 +21,8 @@ Rails.application.routes.draw do
   resources :users
   resources :administrators
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  get 'rooms/show' => 'messages#show'
+  post 'rooms/show' => 'messages#show'
   # Serve websocket cable requests in-process
-  # mount ActionCable.server => '/cable'
+  mount ActionCable.server => '/cable'
 end

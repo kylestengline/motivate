@@ -1,11 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<script type="text/javascript">
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#notice').remove();
+	}, 1000);
+})
+</script>
+
 <h1>
   <strong>Welcome,</strong>
-  <%= @administrator.name %>
+  <%= link_to @administrator.name %>
 </h1>
 
 <%= link_to 'Edit', edit_administrator_path(@administrator) %> |
 <%= link_to 'Back', administrators_path %> |
+<%= link_to 'Users', users_path %> |
 <%= link_to 'Homepage', root_path %> |
 <%= link_to 'Log Out', logout_path, mehtod: "delete" %>

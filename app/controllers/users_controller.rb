@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   # before_action :set_user, only: [:show, :login]
 
   # before_action except: [:show, :login, :login_form] do
@@ -9,26 +10,27 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    # @post = Post.find_by(user_id: :id)
   end
 
-  def login
-    # binding.pry
-    user = User.find_by(email: params['session']['email'])
+  # def login
+  #   # binding.pry
+  #   user = User.find_by(email: params['session']['email'])
 
-    if user && user.authenticate(params['session']['password'])
-      session[:user_type] = 'User'
-      session[:user_id] = user.id
-      @user = session[:email]
+  #   if user && user.authenticate(params['session']['password'])
+  #     session[:user_type] = 'User'
+  #     session[:user_id] = user.id
+  #     @user = session[:email]
 
-      cookies[:email] = user.email
-      # cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
+  #     cookies[:email] = user.email
+  #     # cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
       
-      redirect_to user_path(user)
-    else
-      @error = true
-      render :login_form
-    end
-  end
+  #     redirect_to user_path(user)
+  #   else
+  #     @error = true
+  #     render :login_form
+  #   end
+  # end
 
   # GET /users/1
   # GET /users/1.json
@@ -40,33 +42,38 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    # saying that it needs an administrator and won't create another user.
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        login @user
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+    #respond_to do |format|
+      if user.save
+        login user
+        redirect_to user
+        #format.html { redirect_to user_path(@user), notice: 'User was successfully created.' }
+        #format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+     render :new
+        # format.html { render :new }
+        # format.json { render json: @user.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user = User.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -81,6 +88,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
@@ -100,6 +108,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :user_name)#, :administrator_id)
+      params.require(:user).permit(:email, :password, :user_name, :administrator_id)
     end
 end

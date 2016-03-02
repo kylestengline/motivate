@@ -30,8 +30,9 @@ class AdministratorsController < ApplicationController
   # GET /administrators/1.json
   def show
     @administrator = Administrator.find(params[:id])
-    flash[:success] = "Logged In!"
-    # @users = User.find(params[:id])
+    flash[:notice] = "Successfully Logged In!"
+    # @users = User.all
+    # @posts = Post.all
   end
 
   # GET /administrators/new
@@ -45,19 +46,19 @@ class AdministratorsController < ApplicationController
 
   # POST /administrators
   # POST /administrators.json
-  def create
-    @administrator = Administrator.new(administrator_params)
+  # def create
+  #   @administrator = Administrator.new(administrator_params)
 
-    respond_to do |format|
-      if @administrator.save
-        format.html { redirect_to @administrator, notice: 'Administrator was successfully created.' }
-        format.json { render :show, status: :created, location: @administrator }
-      else
-        format.html { render :new }
-        format.json { render json: @administrator.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @administrator.save
+  #       format.html { redirect_to @administrator, notice: 'Administrator was successfully created.' }
+  #       format.json { render :show, status: :created, location: @administrator }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @administrator.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /administrators/1
   # PATCH/PUT /administrators/1.json

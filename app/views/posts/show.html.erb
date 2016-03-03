@@ -29,15 +29,16 @@ $(document).ready(function(){
 </p>
 
 <p>
-<strong>Notes:</strong>
-<%= @post.story %></p>
+  <strong>Notes:</strong>
+    <%= @post.story %>
+</p>
 
   <strong>Likes:</strong>
   <p id='likeit'><%= @post.votes %></p>
-  <button id="liking" type="submit">Like</button>
+  <button id="liking" type="submit" data-id="<%= @post.id %>">Like</button>
 
 <br>
-<center><h3><%= link_to "Let's Talk About It", rooms_show_path %></h3></center>
+<center><h3><%= link_to "Lets Talk About It", rooms_show_path %></h3></center>
 
 
 <% if session[:user_type] = 'Administrator' %>

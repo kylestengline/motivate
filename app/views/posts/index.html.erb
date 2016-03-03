@@ -15,12 +15,13 @@
   </thead>
 
   <tbody>
+<!-- Implement a feature that goes to all posts by an author. Currently, author is directing to the show post page. -->
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= link_to post.content, post_path(post.id) %></td>
+        <td><%= post.content %></td>
         <td><%= post.votes %></td>
-        <td><%= post.author %></td>
+        <td><%= link_to post.author, post_path(post.id) %></td>
         <% if session[:user_type] = 'Administrator' %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,7 +32,7 @@
 </table>
 
 <br>
-<center><h3><%= link_to "Let's Talk About It", rooms_show_path %></h3></center>
+<center><h3><%= link_to "Lets Talk About It", rooms_show_path %></h3></center>
 <br>
 <% if session[:user_type] = 'Administrator' %>
 <%= link_to 'New Post', new_post_path %>

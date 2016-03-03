@@ -1,3 +1,10 @@
+<center><em><h1>Welcome to Motivate</h1></em>
+	<div calss="welcome">
+		<em><h2>"The starting point of all achievement is desire."</h2></em>
+	</div></center>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/scaffolds.scss">
+
+<center><h3><%= link_to "Lets Talk About It", rooms_show_path %></h3></center>
 <center><%= link_to 'Motivation', posts_path %></center>
 
 <% if session[:user_type] = 'Administrator' %>
@@ -10,4 +17,6 @@
 <% else %>
 	<h2><center><%= link_to "Administrator Login", administrators_login_form_path  %></center></h2>
 <% end %>
+
+
 

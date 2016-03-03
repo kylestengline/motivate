@@ -72,6 +72,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def vote
+    @post = Post.find(params[:id])
+    @post.update(votes: @post.votes + 1)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -89,6 +94,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :votes, :administrator_id, :author)
+      params.require(:post).permit(:title, :content, :story, :votes, :administrator_id, :author)
     end
 end

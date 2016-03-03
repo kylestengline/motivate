@@ -3,30 +3,20 @@
  $(document).ready(function(){
 // console.log("loaded");
 
-	var likes = $('#likeit');
-
-// var like = function() {
-// 	likes ++;
-// 	// votes.text('#likeit');
-// };
-
-// 	$('#liking').click(function(){
-// 			console.log("clicked")
-// 			return likes ++;
-// 		like();
-// 	});
-// });
-
-
+// On click increments likes by 1. 
 	$("#liking").click(function() {
-		console.log('click')
-					console.log('clicking')	    	
+		var id = $(this).data("id");
 	        $.ajax({
-	            url: '/posts/15',
+	            url: '/posts/vote',
 	            type: 'POST',
-	            data: {increment: true},
-	            success: function() { 
-	            	alert('Liked') 
+	            data: {
+	            	id: id,
+	            	increment: true
+	            },
+	            success: function() {
+	            	var like_counter = $('#likeit');
+	            	var current_count = parseInt($('#likeit').html());
+	            	like_counter.html(current_count + 1);	
 	            }
 	        });
 	        return likes ++;

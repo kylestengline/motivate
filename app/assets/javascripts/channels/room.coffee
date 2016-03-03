@@ -11,7 +11,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 	    	@speak event.target.value, user
 	    	# "#{user}: #{event.target.value}"
 	    	# may have to comment this out. Empties the user name field once you hit enter. 
-	    	input_user.val('')
+	    	input_user.hide()
 	    	event.target.value = ''
 	    	event.preventDefault()
 

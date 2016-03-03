@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post'logout' => 'sessions#destroy'
   delete 'logout' => 'sessions#destroy'
 
+  post '/posts/vote' => 'posts#vote'
+
   resources :comments
   resources :posts
   resources :users

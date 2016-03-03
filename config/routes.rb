@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'contact' => 'contact#index'
+  post 'contact' => 'contact#index'
+
   get 'rooms/show'
 
   get 'sessions/new'

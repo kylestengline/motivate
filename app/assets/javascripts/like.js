@@ -18,7 +18,7 @@
 	            	var like_counter = $('#likeit');
 	            	var current_count = parseInt($('#likeit').html());
 	            	like_counter.html(current_count + 1);	
-	            	$("#liking").hide('');
+	            	$("#liking").hide();
 	            }
 	        });
 	    });

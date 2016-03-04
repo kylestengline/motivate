@@ -24,15 +24,16 @@
         <h4><center>"<%= post.content %>"</center></h4>
         <!-- <td><%#= post.votes %></td> -->
         <h4><center>-<%= link_to post.author, post_path(post.id) %></center></h4><br>
-        <% if session[:user_type] = 'Administrator' %>
+        <!-- Uncomment when deploying to heroku -->
+        <%# if session[:user_type] = 'Administrator' %>
         <!-- <td><%#= link_to 'Edit', edit_post_path(post) %></td> -->
         <!-- <td><%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
-      <% end %>
+      <%# end %>
     <% end %>
   </tbody>
       <center><h3><%= link_to "Lets Talk", rooms_show_path %> |
-      <%= link_to 'Home', root_path %> | <%= link_to 'Create', new_post_path %></center></h3>
+      <%= link_to 'Home', root_path %> | <%= link_to 'Add New', new_post_path %></center></h3>
 
 
 </table>

@@ -40,6 +40,8 @@ h3 {
 }
 
 center {
+	padding-right: 30px;
+	padding-left: 30px;
 	animation: fadein 3s;		
 }
 

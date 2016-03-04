@@ -7,7 +7,11 @@
 
 <center><h3><%= link_to 'Motivation', posts_path %> | 
 <%= link_to "Lets Talk", rooms_show_path %></h3></center>
+<% if session[:user_type] = 'Administrator' %>
 
+<% else %> 
+	 <h3><center><%= link_to "Login", administrators_login_form_path %></h3></center>
+ <% end %>
 <%# if session[:user_type] = 'Administrator' %>
 	<%#= link_to 'Profile', administrators_path %>
 	<!-- <center><%#= link_to 'Log Out', logout_path %></center> -->

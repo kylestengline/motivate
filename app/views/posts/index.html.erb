@@ -34,7 +34,7 @@
     <% end %>
   </tbody>
       <% if session[:user_type] = 'Administrator' %>
-        <td><center><%= link_to 'Add New', new_post_path %></center></td>
+        <center><h3><%= link_to 'Add New', new_post_path %></h3></center>
         <% end %>
       <center><h3><%= link_to "Lets Talk", rooms_show_path %> |
       <%= link_to 'Home', root_path %></center></h3>

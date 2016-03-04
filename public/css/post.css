@@ -1,0 +1,59 @@
+h1 {
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+a {
+	text-decoration: none;
+	-webkit-transition: all 1s;
+}
+
+a:hover {
+	-webkit-transition: all 1s;
+}
+
+#post_title {
+	width: 150px;
+}
+
+#post_content {
+	width: 300px;
+	height: 110px;
+}
+
+#post_author {
+	width: 150px;
+}
+
+#post_story {
+	width: 300px;
+	height: 110px;
+}
+
+
+h3 {
+	padding-top: 20px;
+}
+
+#top {
+	padding-top: 30px;
+}
+
+center {
+	animation: fadein 3s;		
+}
+
+h4 {
+	animation: fadein 8s;
+}
+
+@keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1;	}
+}
+
+
+
+
+
+

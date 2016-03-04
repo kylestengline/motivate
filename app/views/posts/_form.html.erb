@@ -11,37 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <center><div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
-  </div>
+  </div></center>
 
-  <div class="field">
+  <center><div class="field">
     <%= f.label :content %>
     <%= f.text_area :content %>
-  </div>
+  </div></center>
 
-  <div class="field">
+  <center><div class="field">
     <%= f.label :author %>
     <%= f.text_field :author %>
-  </div>
+  </div></center>
 
-  <div class="field">
+  <center><div class="field">
     <%= f.label :story %>
     <%= f.text_area :story %>
-  </div>
+  </div></center>
 
-  <div class="field">
+  <center><div class="field">
     <%= f.label :votes %>
     <%= f.number_field :votes %>
-  </div>
+  </div></center>
 
-  <div class="field">
+ <center><div class="field">
     <%= f.label :administrator_id %>
     <%= f.text_field :administrator_id %>
-  </div>
+  </div></center>
 
-  <div class="actions">
+  <center><div class="actions">
     <%= f.submit %>
-  </div>
+  </div></center>
 <% end %>
+
+<link rel="stylesheet" type="text/css" href="/css/post.css">

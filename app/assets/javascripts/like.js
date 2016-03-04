@@ -5,6 +5,7 @@
 
 // On click increments likes by 1. 
 	$("#liking").click(function() {
+		console.log('clicked');
 		var id = $(this).data("id");
 	        $.ajax({
 	            url: '/posts/vote',
@@ -19,6 +20,5 @@
 	            	like_counter.html(current_count + 1);	
 	            }
 	        });
-	        return likes ++;
 	    });
 });

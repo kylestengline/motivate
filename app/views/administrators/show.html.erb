@@ -8,22 +8,26 @@ $(document).ready(function(){
 })
 </script>
 
-<h1>
-  <strong>Welcome,</strong>
+<center><h1>
+	<strong>Welcome,</strong>
   <%= @administrator.name %>
-</h1>
+</h1></center>
 
 <% @posts.each do |p| %>
-<h3><em>"<%= link_to p.content, post_path(p.id) %>"</em></h3>
-<h3><em> - <%= p.author %></em></h3>
+<center><h3><em>"<%= p.content %>"</em></h3>
+<h3><em> - <%= link_to p.author, post_path(p.id) %></em></h3>
 <h3>Votes: <%= p.votes %></h3>
-<h3>Posted On: <%#= show time posted %></h3>
-<h3>Notes: <%= p.story %></h3><br />
+<!-- <h3>Posted On: <%#= show time posted %></h3> -->
+<h3>Notes:</h3> <h4><%= p.story %></h4><br></center>
+<br>
 <% end %>
 
 
-<center><%= link_to 'Edit', edit_administrator_path(@administrator) %></center>
-<center><%= link_to 'Back', administrators_path %></center>
-<center><%= link_to 'Post Something', new_post_path %></center>
-<center><%= link_to 'Homepage', root_path %></center>
-<center><%= link_to 'Log Out', logout_path, mehtod: "delete" %></center>
+<center><h3><%= link_to 'Edit', edit_administrator_path(@administrator) %> |
+<%= link_to 'Back', administrators_path %> |
+<%= link_to 'Post Something', new_post_path %> |
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Log Out', logout_path, mehtod: "delete" %></h3></center>
+
+
+<link rel="stylesheet" type="text/css" href="/css/administrator.css">

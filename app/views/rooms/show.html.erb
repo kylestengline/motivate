@@ -1,14 +1,16 @@
-<h1>Motivate</h1>
+<center><h2>Talk About It</h2></center>
 	<div id="messages">
 		<%#= render @user %>
 		<%= render @messages %>
 </div>
 
 <form>
-  <input type="text" id="user" placeholder="Optional Username">
+  <center><input type="text" id="user" placeholder="Username Optional">
     <br>
-	<textarea id ="say" data-behavior="room_speaker" placeholder="Say Anything"></textarea>
+	<textarea id ="say" data-behavior="room_speaker" placeholder="Lets Talk"></textarea></center>
 </form>
 
-<center><%= link_to 'Motivate', posts_path %></center>
-<center><%= link_to 'Homepage', root_path %></center>
+<center><h3><%= link_to 'Motivate', posts_path %> |
+<%= link_to 'Homepage', root_path %></h3></center>
+
+<link rel="stylesheet" type="text/css" href="/css/rooms.css">

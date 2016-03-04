@@ -8,40 +8,42 @@ $(document).ready(function(){
 })
 </script>
 
-<%# @posts.each do |p| %>
-<!-- <h3><em>"<%#= link_to p.content, post_path(p.id) %>"</em></h3>
-<h3><em> - <%#= p.author %></em></h3>
-<h3>Votes: <%#= p.votes %></h3>
-<h3>Posted On: <%#= show time posted %></h3>
-<h3>Notes: <%#= p.story %></h3><br />
-<%# end %> -->
 
-<p>
+<!-- <center><h1>Motivate</h1></center> -->
+
+<!-- <p> -->
     <!-- Add logic where if title exists, show title, if title does not exist, don't show title. -->
-  <strong>Title:</strong>
-  <em><%= @post.title %></em>
-</p>
+  <!-- <center><strong>Title:</strong></center>
+  <em><%#= @post.title %></em>
+</p> -->
 
-<p>
-  <em>"<%= @post.content %>"</em><br>
+<p id="top">
+  <center><em>"<%= @post.content %>"</em></center><br>
   <%# binding.pry %>
-  -<%= @post.author %>
+  <center>-<%= @post.author %></center>
 </p>
 
 <p>
-  <strong>Notes:</strong>
-    <%= @post.story %>
+  <center><strong>Notes:</strong></center>
+    <center><%= @post.story %></center>
 </p>
 
-  <strong>Likes:</strong>
-  <p id='likeit'><%= @post.votes %></p>
-  <button id="liking" type="submit" data-id="<%= @post.id %>">Like</button>
+  <center><strong>Likes:</strong></center>
+  <center><p id='likeit'><%= @post.votes %></p></center>
+  <center><button id="liking" type="submit" data-id="<%= @post.id %>">Like</button></center>
 
 <br>
 <center><h3><%= link_to "Lets Talk About It", rooms_show_path %></h3></center>
 
 
 <% if session[:user_type] = 'Administrator' %>
+<center><h3><%= link_to 'Back', posts_path %> |
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></h3></center>
+
 <% end %>
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+
+
+

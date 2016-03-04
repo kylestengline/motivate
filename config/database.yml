@@ -80,6 +80,10 @@ test:
 #
 production:
   <<: *default
-  database: motivate_production
-  username: motivate
+  database: <%= ENV['MOTIVATION_DATABASE'] %>
+  username: <%= ENV['MOTIVATION_USER']
   password: <%= ENV['MOTIVATE_DATABASE_PASSWORD'] %>
+  host: <%= ENV['MOTIVATE_HOST'] %>
+
+
+  

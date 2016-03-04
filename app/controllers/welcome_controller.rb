@@ -10,6 +10,6 @@ class WelcomeController < ApplicationController
 			"Better a diamond with a flaw than a pebble without one."
 		].sample
 		# add an author to these 
-		binding.pry
+		# binding.pry
 	end
 end

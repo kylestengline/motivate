@@ -81,9 +81,9 @@ test:
 production:
   <<: *default
   database: <%= ENV['MOTIVATION_DATABASE'] %>
-  username: <%= ENV['MOTIVATION_USER']
+  username: <%= ENV['MOTIVATION_USER'] %>
   password: <%= ENV['MOTIVATE_DATABASE_PASSWORD'] %>
   host: <%= ENV['MOTIVATE_HOST'] %>
 
 
-  
+

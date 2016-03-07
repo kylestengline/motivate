@@ -75,8 +75,10 @@ class AdministratorsController < ApplicationController
   end
 
   def logout
-    session.delete[:user_id]
-    @current_user = nil
+    session.clear
+    # session.delete[:user_id]
+    session[:user_type] = nil
+    # @current_user = nil
   end
 
   # DELETE /administrators/1

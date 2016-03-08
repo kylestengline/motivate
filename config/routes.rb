@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'contact' => 'contact#index'
-  post 'contact' => 'contact#index'
-
   get 'rooms/show'
 
   get 'sessions/new'
@@ -21,6 +18,7 @@ Rails.application.routes.draw do
 
   post '/posts/vote' => 'posts#vote'
 
+  resources :contact
   resources :comments
   resources :posts
   resources :users

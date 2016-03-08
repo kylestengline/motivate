@@ -1,23 +1,5 @@
-<!-- implement this when you can. Form renders, but doesn't post to the db. 03/03/16 -->
-<h1> hello </h1>
-<%= form_for(contact_path) do |f| %>
+<center><h1>Get In Touch</h1>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+<%= render partial: 'form' %>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :message %>
-    <%= f.text_area :message %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<h3><%= link_to 'Back', root_path %></h3></center>

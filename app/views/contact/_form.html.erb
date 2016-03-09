@@ -1,4 +1,4 @@
-<center><%= form_for @contact, url: new_contact_path do |f| %>
+<center><%= form_for(contact_path) do |f| %>
 
   <div class="field">
     <%= f.label :name %>
@@ -16,6 +16,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Get in Touch"%>
+    <%= f.submit "Get in Touch" %>
   </div></center>
 <% end %>

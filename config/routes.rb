@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   get 'rooms/show'
 
+  get 'contact' => 'contact#index'
+  post 'contact' => 'contact#create'
+
   get 'sessions/new'
 
 	root 'welcome#index'
@@ -18,7 +21,6 @@ Rails.application.routes.draw do
 
   post '/posts/vote' => 'posts#vote'
 
-  resources :contact
   resources :comments
   resources :posts
   resources :users

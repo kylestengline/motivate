@@ -1,4 +1,12 @@
-<p><%= notice %></p>
+<p id="notice"><%= notice %></p>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#notice').remove();
+	}, 1000);
+})
+</script>
 
 <center><em><h1>Motivate</h1></em>
 	<div class="welcome">
@@ -8,20 +16,11 @@
 <link rel="stylesheet" type="text/css" href="/css/welcome.css">
 
 <center><h3><%= link_to 'Motivation', posts_path %> | 
-<%= link_to "Lets Talk", rooms_show_path %></h3></center>
+<%= link_to "Lets Talk", rooms_show_path %></h3></center> | 
 <% unless is_admin? %> 
 	 <h3><center><%= link_to "Login", administrators_login_form_path %></h3></center>
  <% end %>
-<%# if session[:user_type] = 'Administrator' %>
-	<%#= link_to 'Profile', administrators_path %>
-	<!-- <center><%#= link_to 'Log Out', logout_path %></center> -->
 
-<%# elsif session[:user_type] = 'User' %>
-	<!-- <center><%#= link_to 'Profile', users_path %><center> -->
-	<!-- <center><%#= link_to 'Log Out', logout_path %></center> -->
-<%# else %>
-	<!-- <h2><center><%#= link_to "Administrator Login", administrators_login_form_path  %></center></h2> -->
-<%# end %>
 
 
 

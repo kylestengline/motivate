@@ -1,4 +1,6 @@
-<center><%= form_for(contact_path) do |f| %>
+<center><%= form_for @contact, method: :post do |f| %>
+
+<div id="container">
 
   <div class="field">
     <%= f.label :name %>
@@ -18,4 +20,8 @@
   <div class="actions">
     <%= f.submit "Get in Touch" %>
   </div></center>
+
+</div>
 <% end %>
+
+<link rel="stylesheet" type="text/css" href="/css/contact.css">

@@ -36,7 +36,8 @@
       <% if is_admin? %>
         <center><h3><%= link_to 'Add New', new_post_path %></h3></center>
         <% end %>
-      <center><h3><%= link_to "Lets Talk", rooms_show_path %> |
+      <center><h3><%= link_to 'Contact', new_contact_path %> |
+      <%= link_to "Lets Talk", rooms_show_path %> |
       <%= link_to 'Home', root_path %></center></h3>
 
 

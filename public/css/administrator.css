@@ -10,3 +10,20 @@ a {
 a:hover {
 	-webkit-transition: all 1s;
 }
+
+#session_email {
+	width: 130px;
+	font-size: 12px;
+	padding-top: 2px;
+}
+
+#session_password {
+	width: 130px;
+	font-size: 12px;
+	padding: 2px;
+}
+
+.actions {
+	font-size: 20px;
+	padding: 10px;
+}

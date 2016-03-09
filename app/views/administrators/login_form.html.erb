@@ -1,4 +1,4 @@
-<h1>Login Page</h1>
+<center><h1>Login Page</h1>
 
 <%#= @error.full_message.to_sentence %>
 <%= form_for(:session, url: administrators_login_path) do |f| %>
@@ -8,5 +8,8 @@
 	<%= f.label :password %>
 	<%= f.password_field :password %><br />
 
-	<%= f.submit "Log Me In. Please and Thanks!" %>
+	<div class="actions"><%= f.submit "Log Me In. Please and Thanks!" %></center>
+	</div>
 	<% end %>
+
+	<link rel="stylesheet" type="text/css" href="/css/administrator.css">

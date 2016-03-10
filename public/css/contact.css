@@ -12,7 +12,7 @@ h1 {
 #contact_name {
 	width: 130px;
 	font-size: 12px;
-	padding-top: 7px;
+	padding: 2px;
 }
 
 #contact_email {

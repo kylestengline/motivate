@@ -9,6 +9,9 @@ class ContactsController < ApplicationController
   	@contact = Contact.new(contact_params)
 
   	if @contact.save
+      #sends email when contact form is filled out
+      ContactMailer.contact_email(@contact).deliver_now
+
   		flash[:notice] = "Submission Successful!"
   		redirect_to root_path
   	else

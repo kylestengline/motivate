@@ -1,10 +1,10 @@
 class AdministratorsController < ApplicationController
-  # before_action :set_administrator, only: [:show, :login]
+  # before_action :set_administrator, only: [:show, :login_form]
 
-    # before_action except: [:login, :login_form] do
+    # skip_before_action only: [:post, :login_form] do
     #   redirect_to administrators_login_form_path unless authorized?
     # end
-  # GET /administrators
+  # # GET /administrators
   # GET /administrators.json
   def index
     @administrators = Administrator.all

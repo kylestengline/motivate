@@ -9,8 +9,9 @@ class ContactsController < ApplicationController
   	@contact = Contact.new(contact_params)
 
   	if @contact.save
+      # Must install sendgrid w/ credit card in order to use on Heroku
       #sends email when contact form is filled out
-      ContactMailer.contact_email(@contact).deliver_now
+      # ContactMailer.contact_email(@contact).deliver_now
 
   		flash[:notice] = "Submission Successful!"
   		redirect_to root_path

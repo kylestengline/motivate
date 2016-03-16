@@ -14,7 +14,7 @@ class ContactsController < ApplicationController
       # ContactMailer.contact_email(@contact).deliver_now
 
   		flash[:notice] = "Submission Successful!"
-  		redirect_to root_path
+  		redirect_to posts_path
   	else
   		render :new
   	end

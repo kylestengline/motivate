@@ -13,10 +13,12 @@ $(document).ready(function(){
 		<em><h2>"<%= @quotes %>"</h2></em>
 	</div></center>
 
-<link rel="stylesheet" type="text/css" href="/css/welcome.css">
-
 <center><h3><%= link_to 'Motivation', posts_path %> | 
 <%= link_to "Lets Talk", rooms_show_path %></h3></center>
+
+<link rel="stylesheet" type="text/css" href="/css/welcome.css">
+
+
 <!-- Possibly implement this at a later time. 03/17/16 -->
 <%# unless is_admin? %> 
 	 <!-- <h3><center><%#= link_to "Login", administrators_login_form_path %></h3></center> -->

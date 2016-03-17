@@ -29,7 +29,7 @@ div#messages {
   top: 110px;
   left: 370px;
   overflow: scroll;
-  // z-index: 42;
+ 	z-index: 42;
 }
 input#user {
 	border: 1px solid black;
@@ -52,3 +52,39 @@ input#user {
 	z-index: 42;
 }
 
+/*Mobile Friendly, man!*/
+@media screen and (max-width: 500px) {
+	#say {
+		border: 2px solid black;
+    width: 250px;
+    height: 80px;
+    position: fixed;
+    top: 340px;
+    left: 15px; 
+    z-index: 42;
+	}
+	input#user {
+		border: 1px solid black;
+    background-color: white;
+    position: fixed;
+    width: 105px;
+    top: 305px;
+    left: 15px;
+    overflow: scroll;
+    z-index: 42;
+	}
+
+	div#messages {
+		border: 2px solid black;
+    background-color: white;
+    position: fixed;
+    width: 254px;
+    height: 200px;
+    top: 80px;
+    left: 10px;
+    overflow: scroll;
+    z-index: 42;
+    padding-right: 10px;
+	}
+
+}

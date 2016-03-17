@@ -11,6 +11,30 @@ body {
 	background-attachment: fixed;
 }
 
+// Mobile Friendly, bro!
+@media screen and (max-width: 500px) {
+	h1, h2, h3, h4, center {
+		// best so far
+		// color: #2abd99;
+		// 2nd, but gets lost in ocean
+		// color: #305cd8;
+		// this one!
+		color: #37b6eb;
+	}
+
+	a {
+		color: #37b6eb;	
+
+		&:visited {
+			color: #37b6eb;	
+		}
+	}
+
+	body {
+		background-image: contain;
+	}
+}
+
 // h1 {
 // 	padding-top: 100px;
 // 	animation: fadein 4s;

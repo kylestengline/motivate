@@ -31,5 +31,7 @@ $(document).ready(function(){
 </table>
 
 <br>
-
-<%= link_to 'New Administrator', new_administrator_path %>
+<% unless is_admin? %> 
+ <h3><center><%= link_to "Login", administrators_login_form_path %></h3></center>
+ <% end %>
+<center><%= link_to 'New Administrator', new_administrator_path %></center>

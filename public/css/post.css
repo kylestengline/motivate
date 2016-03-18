@@ -54,6 +54,11 @@ h4 {
 	to { opacity: 1;	}
 }
 
+@media screen and (max-width: 500px) {
+	#top {
+		padding: 0px;
+	}
+}
 
 
 

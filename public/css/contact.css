@@ -40,3 +40,31 @@ a:hover {
 	color: black;
 	font-size: 20px;
 }
+
+@media screen and (max-width: 500px) {
+
+	#contact_name {
+	width: 130px;
+	font-size: 12px;
+	padding: 2px;
+}
+
+#contact_email {
+	width: 130px;
+	font-size: 12px;
+	padding: 2px;
+}
+
+#contact_message {
+	width: 250px;
+	height: 110px;
+	font-size: 15px;
+	margin-left: -18px;
+}
+
+}
+
+
+
+
+

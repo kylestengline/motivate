@@ -58,6 +58,14 @@ h4 {
 	#top {
 		padding: 0px;
 	}
+
+	#post_content {
+		width: 150px;
+	}
+
+	#post_story {
+		width: 150px;
+	}
 }
 
 

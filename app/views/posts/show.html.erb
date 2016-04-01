@@ -37,9 +37,9 @@ $(document).ready(function(){
 <%= link_to 'Back', posts_path %></h3></center> 
 <!-- Uncomment when deploying to heroku -->
 <% if is_admin? %> 
-<center><h3><%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></h3></center>
-
+  <center><h3><%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </h3></center>
 <% end %>
 <link rel="stylesheet" type="text/css" href="/css/post.css">
 

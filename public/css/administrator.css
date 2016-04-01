@@ -27,3 +27,17 @@ a:hover {
 	font-size: 20px;
 	padding: 10px;
 }
+
+@media screen and (max-width: 500px) {
+	
+	h1 {
+		font-family: sans-serif;
+		font-weight: 100; 
+	}
+		tbody, tr, td {
+			padding: 10px;
+			display: inline-block;
+		}
+} 
+
+

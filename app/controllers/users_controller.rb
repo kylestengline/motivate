@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     # @post = Post.find_by(user_id: :id)
   end
 
+# Have to re-seed in order to have users and create posts with user_id's. Otherwise, it errors out.
   # def login
   #   # binding.pry
   #   user = User.find_by(email: params['session']['email'])

@@ -1,17 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<script type="text/javascript">
-$(document).ready(function(){
-	setTimeout(function(){
-		$('#notice').remove();
-	}, 1000);
-})
-</script>
-
 <center><em><h1>Motivate</h1></em>
 	<div class="welcome">
 		<em><h2>"<%= @quotes %>"</h2></em>
-	</div></center>
+	</div>
+</center>
 
 <center><h3><%= link_to 'Motivation', posts_path %> | 
 <%= link_to "Lets Talk", rooms_show_path %></h3></center>
@@ -20,9 +11,23 @@ $(document).ready(function(){
 
 
 <!-- Possibly implement this at a later time. 03/17/16 -->
-<%# unless is_admin? %> 
-	 <!-- <h3><center><%#= link_to "Login", administrators_login_form_path %></h3></center> -->
- <%# end %>
+<% unless is_admin? %> 
+	 <h3><center>
+	 	<%= link_to "Admin Login", administrators_login_form_path %>
+	 </h3></center>
+	 <% else %>
+	 	<h3><center>
+	 		<%= link_to "Admin Page", administrators_path(@administrator) %> |  
+	 		<%= link_to "Logout", logout_path %>
+	 	</h3></center>
+ <% end %>
+
+<!-- Have to re-seed in order to run users and create posts with user_id's. therwise, it errors out. -->
+<%# unless is_user? %>
+	<!-- <center><h3> -->
+		<%#= link_to "User Login", users_login_form_path %>
+	<!-- </h3></center> -->
+<%# end %>
 
 
 

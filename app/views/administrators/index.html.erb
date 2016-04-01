@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<center><p id="notice"><%= notice %></p></center>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -18,20 +18,20 @@ $(document).ready(function(){
     </tr>
   </thead>
 
-  <tbody>
-    <% @administrators.each do |administrator| %>
-      <tr>
-        <center><td><%= administrator.email %></td>
-        <td><%= link_to 'Show', administrator %></td>
-        <td><%= link_to 'Edit', edit_administrator_path(administrator) %></td>
-        <td><%= link_to 'Destroy', administrator, method: :delete, data: { confirm: 'Are you sure?' } %></td></center>
-      </tr>
-    <% end %>
-  </tbody></center>
-</table>
+    <tbody>
+      <% @administrators.each do |administrator| %>
+        <tr>
+        <center>
+          <td><%= administrator.email %></td>
+          <td><%= link_to 'View Posts', administrator %></td>
+          <td><%= link_to 'Edit Admin', edit_administrator_path(administrator) %> </td>
+          <td><%= link_to 'Delete Admin', administrator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </center>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</center>
 
 <br>
-<% unless is_admin? %> 
- <h3><center><%= link_to "Login", administrators_login_form_path %></h3></center>
- <% end %>
 <center><%= link_to 'New Administrator', new_administrator_path %></center>

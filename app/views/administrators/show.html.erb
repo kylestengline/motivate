@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<center><p id="notice"><%= notice %></p></center>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -9,8 +9,7 @@ $(document).ready(function(){
 </script>
 
 <center><h1>
-	<strong>Welcome,</strong>
-  <%= @administrator.name %>
+	Hi, <%= @administrator.name %>
 </h1></center>
 
 <% @posts.each do |p| %>
@@ -23,11 +22,11 @@ $(document).ready(function(){
 <% end %>
 
 
-<center><h3><%= link_to 'Edit', edit_administrator_path(@administrator) %> |
+<center><h3>
 <%= link_to 'Back', administrators_path %> |
 <%= link_to 'Post Something', new_post_path %> |
 <%= link_to 'Home', root_path %> |
-<%= link_to 'Log Out', logout_path, mehtod: :delete %></h3></center>
+<%= link_to 'Logout', logout_path, mehtod: :delete %></h3></center>
 
 
 <link rel="stylesheet" type="text/css" href="/css/administrator.css">

@@ -63,6 +63,7 @@ input#user {
     left: 15px; 
     z-index: 42;
 	}
+
 	input#user {
 		border: 1px solid black;
     background-color: white;

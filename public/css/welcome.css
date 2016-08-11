@@ -44,7 +44,7 @@ div {
 	}
 
 	body {
-		background-image: url(https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/11350516_485669958256020_3587860267325702075_n.jpg?oh=eddc2042b3353157770d66ff73e10309&oe=578B1150);
-		background-image: contain;
+		background-image: url(/img/tracks.jpg);
+    background-image: contain;
 	}
 }

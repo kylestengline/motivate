@@ -1,9 +1,11 @@
 class AdministratorsController < ApplicationController
-  # before_action :set_administrator, only: [:show, :login_form]
+#current user is undefined locally. Is defined in sessions controller
+  before_action except: [:login, :login_form] do
+    redirect_to administrators_login_form_path unless authorized?
+  end
 
-    # skip_before_action only: [:post, :login_form] do
-    #   redirect_to administrators_login_form_path unless authorized?
-    # end
+  before_action :set_administrator, only: [:show, :edit, :logout]
+
   # # GET /administrators
   # GET /administrators.json
   def index
@@ -76,9 +78,7 @@ class AdministratorsController < ApplicationController
 
   def logout
     session.clear
-    # session.delete[:user_id]
     session[:user_type] = nil
-    # @current_user = nil
   end
 
   # DELETE /administrators/1
@@ -97,6 +97,7 @@ class AdministratorsController < ApplicationController
       @administrator = Administrator.find(params[:id])
     end
 
+#current user is undefined locally. Is defined in sessions controller
     def authorized?
       !current_user.nil? || current_user.is_a?(Administrator)
     end

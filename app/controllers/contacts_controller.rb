@@ -1,11 +1,10 @@
 class ContactsController < ApplicationController
 
   def new
-  	@contact = Contact.new
-	end
+    @contact = Contact.new
+  end
 
   def create 
-  	# binding.pry
   	@contact = Contact.new(contact_params)
 
   	if @contact.save
@@ -22,7 +21,7 @@ class ContactsController < ApplicationController
 
   private
 
-  def contact_params
-  	params.require(:contact).permit(:name, :email, :message)
-  end
+    def contact_params
+      params.require(:contact).permit(:name, :email, :message)
+    end
 end

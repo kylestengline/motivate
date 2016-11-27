@@ -9,9 +9,7 @@ $(document).ready(function(){
 </script>
 
 <center><h1>Motivate</h1></center>
-
 <link rel="stylesheet" type="text/css" href="/css/post.css">
-
 <table>
   <thead>
     <tr>
@@ -28,34 +26,21 @@ $(document).ready(function(){
 <!-- Implement a feature that goes to all posts by an author. Currently, author is directing to the show post page. -->
     <% @posts.each do |post| %>
       <tr>
-        <!-- <td><%#= post.title %></td> -->
         <h4><center>"<%= post.content %>"</center></h4>
-        <!-- <td><%#= post.votes %></td> -->
         <h4><center>-<%= link_to post.author, post_path(post.id) %></center></h4><br>
-        <!-- Uncomment when deploying to heroku -->
-        <%# if session[:user_type] = 'Administrator' %>
-        <!-- <td><center><%#= link_to 'Add New', new_post_path %></center></td> -->
-        <!-- <td><%#= link_to 'Edit', edit_post_path(post) %></td> -->
-        <!-- <td><%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
       <%# end %>
     <% end %>
   </tbody>
-    <% if is_admin? %>
-      <center><h3><%= link_to 'Add New', new_post_path %> | 
-        <%= link_to 'Logout', logout_path, mehtod: :delete %>
-      </h3></center>
-    <% end %>
-      <center><h3><%= link_to 'Contact', new_contact_path %> |
-        <%= link_to "Lets Talk", rooms_show_path %> |
-        <%= link_to 'Home', root_path %>
-      </center></h3>
-
-
+  <% unless is_admin? %>
+    <center><h3><%= link_to 'Add New', new_post_path %> | 
+      <%= link_to 'Logout', logout_path, mehtod: :delete %>
+    </h3></center>
+  <% end %>
+  <center><h3><%= link_to 'Contact', new_contact_path %> |
+    <%= link_to "Lets Talk", rooms_show_path %> |
+    <%= link_to 'Home', root_path %>
+  </center></h3>
 </table>
-
 <br>
 <br>
-<%# if session[:user_type] = 'Administrator' %>
-<%#= link_to 'New Post', new_post_path %>
-<%# end %>

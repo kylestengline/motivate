@@ -45,7 +45,7 @@ $(document).ready(function(){
   </h3>
 </center> 
 
-<% unless is_admin? %> 
+<% if logged_in? %> 
   <center>
     <h3>
       <%= link_to 'Edit', edit_post_path(@post) %> |

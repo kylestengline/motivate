@@ -15,14 +15,14 @@
 
 
 <!-- Possibly implement this at a later time. 03/17/16 -->
-<% unless is_admin? %> 
+<% if logged_in? %> 
   <h3><center>
     <%= link_to "Admin Page", administrators_path(@administrator) %> |  
-    <%= link_to "Logout", logout_path %>
+    <%= link_to 'Logout', logout_path, mehtod: :delete %>
   </h3></center>
 <% else %>
   <h3><center>
-  <%= link_to "Admin Login", administrators_login_form_path %>
+    <%= link_to "Admin Login", administrators_login_form_path %>
   </h3></center>
 <% end %>
 

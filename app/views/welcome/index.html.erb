@@ -4,23 +4,27 @@
 	</div>
 </center>
 
-<center><h3><%= link_to 'Motivation', posts_path %> | 
-<%= link_to "Lets Talk", rooms_show_path %></h3></center>
+<center>
+  <h3>
+    <%= link_to 'Motivation', posts_path %> | 
+    <%= link_to "Lets Talk", rooms_show_path %>
+  </h3>
+</center>
 
 <link rel="stylesheet" type="text/css" href="/css/welcome.css">
 
 
 <!-- Possibly implement this at a later time. 03/17/16 -->
 <% unless is_admin? %> 
-	 <h3><center>
-	 	<%= link_to "Admin Login", administrators_login_form_path %>
-	 </h3></center>
-	 <% else %>
-	 	<h3><center>
-	 		<%= link_to "Admin Page", administrators_path(@administrator) %> |  
-	 		<%= link_to "Logout", logout_path %>
-	 	</h3></center>
- <% end %>
+  <h3><center>
+    <%= link_to "Admin Page", administrators_path(@administrator) %> |  
+    <%= link_to "Logout", logout_path %>
+  </h3></center>
+<% else %>
+  <h3><center>
+  <%= link_to "Admin Login", administrators_login_form_path %>
+  </h3></center>
+<% end %>
 
 <!-- Have to re-seed in order to run users and create posts with user_id's. therwise, it errors out. -->
 <%# unless is_user? %>

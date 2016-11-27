@@ -33,9 +33,12 @@ $(document).ready(function(){
     <% end %>
   </tbody>
   <% unless is_admin? %>
-    <center><h3><%= link_to 'Add New', new_post_path %> | 
-      <%= link_to 'Logout', logout_path, mehtod: :delete %>
-    </h3></center>
+    <center>
+      <h3>
+        <%= link_to 'Add New', new_post_path %> | 
+        <%= link_to 'Logout', logout_path, mehtod: :delete %>
+      </h3>
+    </center>
   <% end %>
   <center><h3><%= link_to 'Contact', new_contact_path %> |
     <%= link_to "Lets Talk", rooms_show_path %> |

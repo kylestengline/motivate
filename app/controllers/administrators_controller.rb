@@ -20,7 +20,6 @@ class AdministratorsController < ApplicationController
       @admin = session[:email]
 
       cookies[:email] = admin_user.email
-      # cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
       redirect_to administrator_path(admin_user)
     else
       @error = true
@@ -77,8 +76,8 @@ class AdministratorsController < ApplicationController
   end
 
   def logout
-    session.clear
-    session[:user_type] = nil
+    session.delete('user_id')
+    redirect_to root_path
   end
 
   # DELETE /administrators/1

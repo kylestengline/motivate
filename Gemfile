@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# getting weird errors about 'make sure gem install bcrypt -v 3.1.10 succeeds before continuing'.
+# Upon bundle update, getting error 'make sure nokogiri (current version) is installed'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

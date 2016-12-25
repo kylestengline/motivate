@@ -12,17 +12,6 @@ class PostsController < ApplicationController
   def show
   end
 
-  # def like
-  #   get_vote
-  #   @vote.value += 1 unless @vote.value == 1
-  #   @vote.save
-  #   respond_to do |format|
-  #     format.html
-  #     format.js 
-  #   end
-  # end
-
-
   # GET /posts/new
   def new
     @post = Post.new
@@ -82,15 +71,6 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
-
-    # def get_vote
-    #   current_item = @post.detect{|r| r.id == params[:id].to_i}
-    #   @vote = current_item.votes.find_by_user_id(current_user.id)
-    #   unless @vote
-    #     @vote = Vote.create(:user_id => current_user.id, :value => 0)
-    #     current_item.votes << @vote
-    #   end
-    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params

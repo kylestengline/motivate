@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
+
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+
+  before_action except: [:login, :login_form, :index, :show] do
+    redirect_to administrators_login_form_path unless logged_in?
+  end
 
   # GET /posts
   # GET /posts.json

@@ -61,14 +61,3 @@ p "Created #{Administrator.count} Administrators"
 p "Created #{User.count} Users"
 p "Created #{Comment.count} Comment"
 p "Created #{Post.count} Posts"
-
-
-
-
-
-
-
-
-
-
-

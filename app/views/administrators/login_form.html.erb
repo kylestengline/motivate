@@ -1,15 +1,17 @@
-<center><h1>Login Page</h1>
+<center>
+  <h1>Login Page</h1>
 
-<%#= @error.full_message.to_sentence %>
-<%= form_for(:session, url: administrators_login_path) do |f| %>
-	<%= f.label :email %>
-	<%= f.text_field :email %><br />
+  <%= form_for(:session, url: administrators_login_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br />
 
-	<%= f.label :password %>
-	<%= f.password_field :password %><br />
+    <%= f.label :password %>
+    <%= f.password_field :password %><br />
 
-	<div class="actions"><%= f.submit "Log Me In. Please and Thanks!" %></center>
-	</div>
-	<% end %>
+    <div class="actions">
+      <%= f.submit "Log Me In. Please and Thanks!" %>
+    </div>
+  <% end %>
+</center>
 
-	<link rel="stylesheet" type="text/css" href="/css/administrator.css">
+<link rel="stylesheet" type="text/css" href="/css/administrator.css">

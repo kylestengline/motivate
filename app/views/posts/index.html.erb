@@ -29,7 +29,6 @@ $(document).ready(function(){
         <h4><center>"<%= post.content %>"</center></h4>
         <h4><center>-<%= link_to post.author, post_path(post.id) %></center></h4><br>
       </tr>
-      <%# end %>
     <% end %>
   </tbody>
   <% if logged_in? %>

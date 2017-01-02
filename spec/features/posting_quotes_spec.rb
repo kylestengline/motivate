@@ -1,0 +1,25 @@
+require 'rails_helper'
+
+RSpec.feature "Logged in Users can post quotes" do
+  let(:administrator) {Administrator.create(name: "My Name", email: "my@example.com", password: "password" )}
+
+  before do 
+    @post = Post.create(content: "The Content created", votes: 1, story: "My story", author: "A Name", administrator_id: 1, administrator: administrator )
+  end
+
+  scenario "as a logged in user I can post a quote" do
+    login(administrator)
+        
+    click_link "Post Something"
+    fill_in "Content", with: @post.content
+    fill_in "Author", with: @post.author
+    fill_in "Story", with: @post.story
+    fill_in "Votes", with: @post.votes
+    fill_in "Administrator", with: @post.administrator_id
+    click_on "Create Post"
+
+    expect(page).to have_content "Post was successfully created."
+    expect(page).to have_content @post.content
+    expect(page.current_path).to eq(post_path(@post))
+  end
+end

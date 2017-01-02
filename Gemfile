@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'better_errors'
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development do

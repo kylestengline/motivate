@@ -4,11 +4,28 @@
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        <p id="notice"><%= flash[:danger] %></p>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            setTimeout(function(){
+              $('#notice').remove();
+            }, 1000);
+          })
+        </script>
       </ul>
     </div>
+  <% else %>
+    <p id="notice"><%= notice %></p>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        setTimeout(function(){
+          $('#notice').remove();
+        }, 1000);
+      })
+    </script>
   <% end %>
 
   <center><div class="field">

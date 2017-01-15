@@ -1,5 +1,3 @@
-require 'capybara/rails'
-
 def login(user)
   user = Administrator.create(name: "My Name", email: "my@example.com", password: "password" )
   visit root_path

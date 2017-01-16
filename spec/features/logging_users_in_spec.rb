@@ -15,10 +15,9 @@ RSpec.feature "Logging in" do
 
     # fails b/c redirecting to the root_path and not admin_posts_path when logging in
     expect(page).to have_content "Successfully Logged In!"
-    expect(page).to have_content "Hi, #{administrator.name}"
-
-    expect(page).to have_link "Post Something"
-    expect(page).to have_link "Home"
+    expect(page).to have_content "Admin Page"
+    expect(page).to have_link "Motivation"
+    expect(page).to have_link "Lets Talk"
     expect(page).to have_link "Logout"
   end
 

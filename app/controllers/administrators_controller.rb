@@ -20,7 +20,7 @@ class AdministratorsController < ApplicationController
       @admin = session[:email]
 
       cookies[:email] = admin_user.email
-      redirect_to admin_posts_path # redirecting to welcome page (root_path) want to redirect to admin_posts_path
+      redirect_to root_path
       flash[:notice] = "Successfully Logged In!"
     else
       @error = true

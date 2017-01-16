@@ -1,13 +1,14 @@
 require 'rails_helper'
 
 RSpec.feature "Creating Posts" do
-  let(:user) {User.create(user_name: "My Name", email: "my@example.com", password: "password" )}
+  let(:administrator) {Administrator.create(email: "my@example.com", password: "password" )}
 
-  let(:post) {Post.create(content: "The Content created", votes: 1, story: "My story", author: "A Name", user: user)}
+  let(:post) {Post.create(content: "The Content created", votes: 1, story: "My story", author: "A Name", administrator: administrator)}
 
   scenario "as a logged in user I can post a quote" do
-    login(user)
-        
+    login(administrator)
+
+    click_link "Admin Page"    
     click_link "Post Something"
     fill_in "Content", with: post.content
     fill_in "Author", with: post.author
@@ -21,8 +22,9 @@ RSpec.feature "Creating Posts" do
   end
 
   scenario "as a logged in user I cannot create a new post" do
-    login(user)
+    login(administrator)
     
+    click_link "Admin Page"    
     click_link "Post Something"
     fill_in "Content", with: ""
     fill_in "Author", with: ""

@@ -27,21 +27,21 @@ Administrator.create!(
 end
 
 Post.create!([
-	{author: "Earl Nightingale", content: "When you judge others, you do not define them; you define yourself.", user_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Jim Carrey", content: "You can fail at what you don't want. So you might as well take a chance on doing what you love.", user_id: 4, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Maya Angelou", content: "You alone are enough. You have nothing to prove.", user_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Albert Einstein", content: "Logic will get you from A to B. Imagination will take you everywhere.", user_id: 2, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Unknown", content: "Forgive, not because they deserve forgiveness, but because you deserve peace.", user_id: 5, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Lao Tzu", content: "Whoever can see through all fear will always be safe.", user_id: 7, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: 'Lao Tzu', content: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.", user_id: 8, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Chinese Proverb", content: "The person who says it cannot be done should not interrupt the person doing it.", user_id: 9, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Nelson Mandela", content: "It always seems impossible until it's done.", user_id: 7, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "George M. Moore Jr.", content: "A winner is just a loser who tried one more time.", user_id: 3, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Japanese Proverb", content: "Fall down seven times, get up eight.", user_id: 3, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Napoleon Hill", content: "Nothing can be called failure until you accept it as such.", user_id: 6, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph},
-	{author: "Winston Churchill", content: "If you're going through hell keep going.", user_id: 7, votes: Faker::Number.number(1)}, 
-	{author: "Jim Rohn", content: "Don't wish it were easier, wish you were better.", user_id: 10, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
-	{author: "Socrates", content: "The secret of change is to focus all of your energy, not on fighting the old, but on building the new.", user_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}
+	{author: "Earl Nightingale", content: "When you judge others, you do not define them; you define yourself.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Jim Carrey", content: "You can fail at what you don't want. So you might as well take a chance on doing what you love.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Maya Angelou", content: "You alone are enough. You have nothing to prove.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Albert Einstein", content: "Logic will get you from A to B. Imagination will take you everywhere.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Unknown", content: "Forgive, not because they deserve forgiveness, but because you deserve peace.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Lao Tzu", content: "Whoever can see through all fear will always be safe.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: 'Lao Tzu', content: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Chinese Proverb", content: "The person who says it cannot be done should not interrupt the person doing it.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Nelson Mandela", content: "It always seems impossible until it's done.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "George M. Moore Jr.", content: "A winner is just a loser who tried one more time.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Japanese Proverb", content: "Fall down seven times, get up eight.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Napoleon Hill", content: "Nothing can be called failure until you accept it as such.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph},
+	{author: "Winston Churchill", content: "If you're going through hell keep going.", administrator_id: 1, votes: Faker::Number.number(1)}, 
+	{author: "Jim Rohn", content: "Don't wish it were easier, wish you were better.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
+	{author: "Socrates", content: "The secret of change is to focus all of your energy, not on fighting the old, but on building the new.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}
 	])
 
 15.times do |comment| 

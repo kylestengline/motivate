@@ -16,7 +16,7 @@ module SessionsHelper
   end
 
   def admin?
-    current_user && current_user == 'Administrator'
+   current_user && session[:user_type] = 'Administrator'
   end
 
 	def logout

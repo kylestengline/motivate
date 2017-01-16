@@ -1,5 +1,5 @@
 module SessionsHelper
-#(user)
+
 	def login
 		session[:user_id] = administrator.id
 	end
@@ -13,6 +13,10 @@ module SessionsHelper
       when 'Administrator' then Administrator.find_by(id: session[:user_id])
       # when 'User' then User.find_by(id: session[:user_id])
     end
+  end
+
+  def admin?
+    current_user && current_user == 'Administrator'
   end
 
 	def logout

@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   post '/posts/vote' => 'posts#vote'
 
   namespace :admin do
-    root to: 'posts#index'
     resources :posts
   end
 

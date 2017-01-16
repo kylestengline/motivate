@@ -20,7 +20,8 @@ class AdministratorsController < ApplicationController
       @admin = session[:email]
 
       cookies[:email] = admin_user.email
-      redirect_to administrator_path(admin_user)
+      redirect_to admin_posts_path(admin_user) # redirecting to welcome page (root_path) want to redirect to admin_posts_path
+      flash[:notice] = "Successfully Logged In!"
     else
       @error = true
       render :login_form
@@ -31,7 +32,6 @@ class AdministratorsController < ApplicationController
   # GET /administrators/1.json
   def show
     @administrator = Administrator.find(params[:id])
-    flash[:notice] = "Successfully Logged In!"
     @posts = Post.all
     # @users = User.all
   end

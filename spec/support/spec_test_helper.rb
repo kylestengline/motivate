@@ -1,8 +1,8 @@
 def login(user)
-  user = Administrator.create(name: "My Name", email: "my@example.com", password: "password" )
+  user = User.create(user_name: "My Name", email: "my@example.com", password: "password" )
   visit root_path
 
-  click_link "Admin Login"
+  click_link "Login"
 
   fill_in "Email", with: user.email
   fill_in "Password", with: user.password

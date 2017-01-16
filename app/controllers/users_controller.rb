@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
-  # before_action :set_user, only: [:show, :login]
+   before_action :set_user, only: [:show, :login]
 
-  # before_action except: [:show, :login, :login_form] do
-  #   redirect_to users_login_form_path unless authorized?
-  # end
+   before_action except: [:login, :login_form] do
+     redirect_to users_login_form_path unless authorized?
+   end
 
   # GET /users
   # GET /users.json
@@ -14,24 +14,24 @@ class UsersController < ApplicationController
   end
 
 # Have to re-seed in order to have users and create posts with user_id's. Otherwise, it errors out.
-  # def login
+   def login
   #   # binding.pry
-  #   user = User.find_by(email: params['session']['email'])
+     user = User.find_by(email: params['session']['email'])
 
-  #   if user && user.authenticate(params['session']['password'])
-  #     session[:user_type] = 'User'
-  #     session[:user_id] = user.id
-  #     @user = session[:email]
+     if user && user.authenticate(params['session']['password'])
+       session[:user_type] = 'User'
+       session[:user_id] = user.id
+       @user = session[:email]
 
-  #     cookies[:email] = user.email
-  #     # cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
+       cookies[:email] = user.email
+       cookies[:age_example] = {:value => "Expires in 10 seconds", :expires => Time.now + 10}
       
-  #     redirect_to user_path(user)
-  #   else
-  #     @error = true
-  #     render :login_form
-  #   end
-  # end
+       redirect_to user_path(user)
+     else
+       @error = true
+       render :login_form
+     end
+   end
 
   # GET /users/1
   # GET /users/1.json
@@ -43,7 +43,6 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    # saying that it needs an administrator and won't create another user.
     @user = User.new
   end
 
@@ -57,18 +56,17 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
 
-    #respond_to do |format|
-    if user.save
-      login user
-      redirect_to user
-      #format.html { redirect_to user_path(@user), notice: 'User was successfully created.' }
-      #format.json { render :show, status: :created, location: @user }
-    else
-      render :new
-      # format.html { render :new }
-      # format.json { render json: @user.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if user.save
+        login user
+        redirect_to user
+        format.html { redirect_to user_path(@user), notice: 'Successfully Signed Up.' }
+        format.json { render :show, status: :created, location: @user }
+      else
+        render :new
+        flash[:danger] = "User Unsuccesfully signed up"
+      end
     end
-  # end
   end
 
   # PATCH/PUT /users/1
@@ -109,6 +107,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :user_name, :administrator_id)
+      params.require(:user).permit(:email, :password, :user_name )
     end
 end

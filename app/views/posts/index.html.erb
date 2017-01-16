@@ -12,14 +12,16 @@ $(document).ready(function(){
 <link rel="stylesheet" type="text/css" href="/css/post.css">
 <table>
   <thead>
-    <tr>
-    <!-- Add logic where if title exists, show title, if title does not exist, don't show title. -->
-      <!-- <th>Title</th>
-      <th>Content</th>
-      <th>Likes</th>
-      <th>Author</th>
-      <th colspan="4"></th> -->
-    </tr>
+    <%# unless @post.title.blank? %>
+      <tr>
+      <!-- Add logic where if title exists, show title, if title does not exist, don't show title. -->
+        <!-- <th>Title</th>
+        <th>Content</th>
+        <th>Likes</th>
+        <th>Author</th>
+        <th colspan="4"></th> -->
+      </tr>
+    <%# end %>
   </thead>
 
   <tbody>

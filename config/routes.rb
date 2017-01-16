@@ -18,10 +18,16 @@ Rails.application.routes.draw do
 
   post '/posts/vote' => 'posts#vote'
 
+  namespace :admin do
+    root to: 'posts#index'
+    resources :posts
+  end
+
   resources 'contacts', only: [:new, :create] 
   # post '/contacts/new' => 'contacts#create'
-  resources :comments
-  resources :posts
+  resources :posts, only: [:index, :show] do
+    resources :comments
+  end
   resources :users
   resources :administrators
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

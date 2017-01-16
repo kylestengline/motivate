@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+jp id="notice"><%= notice %></p>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -36,15 +36,17 @@ $(document).ready(function(){
   <% if logged_in? %>
     <center>
       <h3>
-        <%= link_to 'Add New', new_post_path %> | 
         <%= link_to 'Logout', logout_path, mehtod: :delete %>
       </h3>
     </center>
   <% end %>
-  <center><h3><%= link_to 'Contact', new_contact_path %> |
-    <%= link_to "Lets Talk", rooms_show_path %> |
-    <%= link_to 'Home', root_path %>
-  </center></h3>
+  <center>
+    <h3>
+      <%= link_to 'Contact', new_contact_path %> |
+      <%= link_to "Lets Talk", rooms_show_path %> |
+      <%= link_to 'Home', root_path %>
+    </h3>
+  </center>
 </table>
 <br>
 <br>

@@ -1,22 +1,31 @@
-<h1>Listing All Posts</h1>
+<center><h1>Listing All Posts</h1></center>
 
-<center><h1>
-	Hi, <%= @administrator.name %>
-</h1></center>
-
-<%= link_to 'Post Something', new_post_path %>
+<!-- Implement later? Do we need this?
+    <center><h1>
+	Hi, <%#= @administrator.name %>
+</h1></center> -->
 
 <table class='table table-striped'>
   <thead>
     <tr>
-      <td>Title</td>
-      <td>Actions</td>
+      <% @posts.each do |post| %>
+        <% unless post.title.blank? %>
+          <td><center>Title</center></td>
+        <% end %>
+      <% end %>
+      <td><center>Content</center></td>
+      <td><center>Author</center></td>
+      <td><center>Actions</center></td>
     </tr>
   </thead>
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
+        <% unless post.title.blank? %>
+          <td><center><%= post.title %></center></td>
+        <% end %>
+        <td><center><%= post.content %></center></td>
+        <td><center><%= link_to post.author, post_path(post.id) %></center></td>
         <td>
           <%= link_to 'Show', post %> &middot;
           <%= link_to 'Edit', [:edit, :admin, post] %> &middot;
@@ -26,4 +35,5 @@
     <% end %>
   </tbody>
 </table>
+<center><h4><%= link_to 'Post Something', new_admin_post_path %></h4></center>
 <link rel="stylesheet" type="text/css" href="/css/administrator.css">

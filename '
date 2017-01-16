@@ -8,7 +8,7 @@ RSpec.feature "Creating Posts" do
   scenario "as a logged in user I can post a quote" do
     login(administrator)
 
-    click_link "Post Something"
+    click_on "Post Something"
     fill_in "Content", with: post.content
     fill_in "Author", with: post.author
     fill_in "Story", with: post.story

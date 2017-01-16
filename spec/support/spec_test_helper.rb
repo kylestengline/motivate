@@ -7,4 +7,6 @@ def login(user)
   fill_in "Email", with: administrator.email
   fill_in "Password", with: administrator.password
   click_on "Log Me In. Please and Thanks!"
+
+  click_link "Admin Page"
 end

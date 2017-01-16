@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'faker'
+gem 'warden'
 
 
 # Use jquery as the JavaScript library

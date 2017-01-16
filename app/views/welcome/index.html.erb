@@ -14,7 +14,7 @@
 <!-- Possibly implement this at a later time. 03/17/16 -->
 <% if logged_in? %> 
   <h3><center>
-    <%= link_to "Admin Page", admin_posts_path(@administrator) %> |  
+    <%= link_to "Admin Page", admin_root_path #not going to admin_root_path, refreshing back to root_path %> |  
     <%= link_to 'Logout', logout_path, mehtod: :delete %>
   </h3></center>
 <% else %>

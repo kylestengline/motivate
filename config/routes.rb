@@ -19,12 +19,12 @@ Rails.application.routes.draw do
   post '/posts/vote' => 'posts#vote'
 
   namespace :admin do
-    #took out root to: 'posts#index'
+    root to: 'posts#index'
     resources :posts
   end
 
   resources 'contacts', only: [:new, :create] 
-  # post '/contacts/new' => 'contacts#create'
+
   resources :posts, only: [:index, :show] do
     resources :comments
   end

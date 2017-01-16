@@ -4,11 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create 
-  	# logs in the user after signing up. While authenticating the email and password
+  	# logs in the user after signing up while authenticating the email and password
   	user = Administrator.find_by(email: params[:session][:email].downcase)
   	if user && user.authenticate(params[:session][:password])
   		login user
-      redirect_to user
+      flash[:notice] = "Successfully Logged In!"
+      redirect_to admin_root_path
+      #changed above from user
   	else
   		flash.now[:danger] = "Invalid Email and Password Combo"
       render :new

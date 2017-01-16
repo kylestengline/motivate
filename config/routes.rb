@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
+	root 'welcome#index'
+
   get 'rooms/show'
 
   get 'sessions/new'
-
-	root 'welcome#index'
   
 	get '/administrators/login_form' => 'administrators#login_form'
 	post '/administrators/login' => 'administrators#login'
@@ -18,17 +18,17 @@ Rails.application.routes.draw do
 
   post '/posts/vote' => 'posts#vote'
 
+  resources :posts, only: [:index, :show] do
+    resources :comments
+  end
+
   namespace :admin do
-    root to: 'posts#index'
     resources :posts
   end
 
   resources 'contacts', only: [:new, :create] 
 
-  resources :posts, only: [:index, :show] do
-    resources :comments
-  end
-  resources :users
+  #resources :users
   resources :administrators
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'rooms/show' => 'messages#show'

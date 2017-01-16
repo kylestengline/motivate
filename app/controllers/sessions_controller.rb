@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
   	if user && user.authenticate(params[:session][:password])
   		login user
       flash[:notice] = "Successfully Logged In!"
-      redirect_to admin_root_path
+      redirect_to admin_posts_path
+      #not redirecting to admin_posts, but going to root
       #changed above from user
   	else
   		flash.now[:danger] = "Invalid Email and Password Combo"

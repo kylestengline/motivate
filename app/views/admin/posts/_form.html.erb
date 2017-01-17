@@ -7,6 +7,7 @@
         <% post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
+
         <p id="notice"><%= flash[:danger] %></p>
         <script type="text/javascript">
           $(document).ready(function(){
@@ -65,7 +66,7 @@
 
   <center>
     <div class="field">
-      <%= f.label :administrator %>
+      <%= f.label :administrator_id %>
       <%= f.number_field :administrator_id %>
     </div>
   </center>

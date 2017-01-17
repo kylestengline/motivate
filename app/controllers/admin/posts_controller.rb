@@ -1,6 +1,5 @@
 class Admin::PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
   before_action :admin_only
 
   def index
@@ -63,7 +62,8 @@ class Admin::PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :story, :votes, :author)
+      params.require(:post)
+        .permit(:title, :content, :story, :votes, :author, :administrator)
     end
 
     def admin_only

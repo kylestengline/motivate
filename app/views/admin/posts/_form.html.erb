@@ -1,23 +1,25 @@
-<%= form_for([:admin, post]) do |f| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= form_for([:admin, @post]) do |f| %>
+  <% if @post.errors.any? %>
+    <center>
+      <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
 
-        <p id="notice"><%= flash[:danger] %></p>
-        <script type="text/javascript">
-          $(document).ready(function(){
-            setTimeout(function(){
-              $('#notice').remove();
-            }, 1000);
-          })
-        </script>
-      </ul>
-    </div>
+          <p id="notice"><%= flash[:danger] %></p>
+          <script type="text/javascript">
+            $(document).ready(function(){
+              setTimeout(function(){
+                $('#notice').remove();
+              }, 1000);
+            })
+          </script>
+        </ul>
+      </div>
+    </center>
   <% else %>
     <p id="notice"><%= notice %></p>
     <script type="text/javascript">
@@ -64,12 +66,12 @@
     </div>
   </center>
 
-  <center>
+  <!--<center>
     <div class="field">
-      <%= f.label :administrator_id %>
-      <%= f.number_field :administrator_id %>
+      <%#= f.label :administrator_id %>
+      <%#= f.number_field :administrator_id %>
     </div>
-  </center>
+  </center> -->
 
   <center>
     <div class="actions">

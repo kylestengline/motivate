@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Creating Posts" do
   let(:administrator) {Administrator.create(name: "My Name", email: "my@example.com", password: "password" )}
 
-  let(:post) {Post.create(content: "The Content created", votes: 1, story: "My story", author: "A Name", administrator_id: 1, administrator: administrator)}
+  let(:post) {Post.create(content: "The Content created", votes: 1, story: "My story", author: "A Name", administrator: administrator)}
 
   scenario "as a logged in user I can post a quote" do
     login(administrator)
@@ -14,7 +14,6 @@ RSpec.feature "Creating Posts" do
     fill_in "Author", with: post.author
     fill_in "Story", with: post.story
     fill_in "Votes", with: post.votes
-    fill_in "Administrator", with: post.administrator_id
     click_on "Create Post"
 
     expect(page).to have_content "Post was successfully created."
@@ -31,7 +30,6 @@ RSpec.feature "Creating Posts" do
     fill_in "Author", with: ""
     fill_in "Story", with: ""
     fill_in "Votes", with: ""
-    fill_in "Administrator", with: ""
     click_on "Create Post"
 
     expect(page).to have_content "Post not created"

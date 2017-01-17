@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Creating Posts" do
-  let(:administrator) {Administrator.create!(email: "my@example.com", password: "password" )}
+  let(:administrator) {Administrator.create!(name: "My Name", email: "my@example.com", password: "password" )}
 
   let(:post) {Post.create!(content: "The Content created", votes: 1, story: "My story", author: "A Name", administrator: administrator)}
 
@@ -18,7 +18,7 @@ RSpec.feature "Creating Posts" do
 
     expect(page).to have_content "Post was successfully created."
     expect(page).to have_content post.content
-    expect(page.current_path).to eq(posts_path)
+    expect(page.current_path).to eq(admin_posts_path)
   end
 
   scenario "as a logged in user I cannot create a new post" do
@@ -33,7 +33,7 @@ RSpec.feature "Creating Posts" do
     click_on "Create Post"
 
     expect(page).to have_content "Post not created"
-    expect(page.current_path).to eq(posts_path)
+    expect(page.current_path).to eq(admin_posts_path)
     expect(page).to have_content "New Post"
   end
 end

@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "Like feature" do
-  let(:administrator) {Administrator.create!(email: "my@example.com", password: "password" )}
 
   before do
-    @post = Post.create!(content: "The Content created", votes: 1, story: "My story", author: "Authors Name", administrator: administrator )
+    @post = Post.create!(content: "The Content created", votes: 1, story: "My story", author: "Authors Name")
   end
 
   scenario "users can like quotes" do

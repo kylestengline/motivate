@@ -6,11 +6,15 @@ class Admin::PostsController < ApplicationController
     redirect_to administrators_login_form_path unless authorized?
   end
 
-  before_action :set_administrator, only: [:show, :edit, :logout]
+ # before_action :set_administrator, only: [:show, :edit, :logout]
 
   def index
     @posts = Post.all
    # @administrator = Administrator.find(params[:id])
+  end
+
+  def show
+    #@comment = @post.comments.build
   end
 
   # GET /posts/new
@@ -26,7 +30,6 @@ class Admin::PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
     if @post.save
       flash[:notice] = 'Post was successfully created.'
       redirect_to admin_posts_path

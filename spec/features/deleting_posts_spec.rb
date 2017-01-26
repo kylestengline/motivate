@@ -14,9 +14,9 @@ RSpec.feature "Deleting Posts" do
         click_link "Delete"
       end
     end
-    byebug
 
-    expect(page).to have_content "Post was successfully destroyed."
     expect(page.current_path).to eq(admin_posts_path)
+    binding.pry
+    expect(page).to have_content "Post was successfully destroyed."
   end
 end

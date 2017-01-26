@@ -18,9 +18,9 @@ Rails.application.routes.draw do
 
   post '/posts/vote' => 'posts#vote'
 
-  resources :posts, only: [:index, :show] do
-    resources :comments
-  end
+  resources :posts, only: [:index, :show]# do
+#    resources :comments
+#  end
 
   namespace :admin do
     resources :posts

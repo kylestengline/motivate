@@ -25,13 +25,13 @@ $(document).ready(function(){
   </thead>
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
+      <tr class="the-actions">
         <td><center><%= post.content %></center></td>
         <td><center><%= link_to post.author, post_path(post.id) %></center></td>
-        <td>
+        <td class="actions-column">
           <%= link_to 'Show', post %> &middot;
           <%= link_to 'Edit', [:edit, :admin, post] %> &middot;
-          <%= link_to 'Delete', [:admin, post], method: 'delete', confirm: 'Are you sure you want to delete this post?' %>
+          <%= link_to 'Delete', [:admin, post], method: 'delete', confirm: 'Are you sure you want to delete this post?', class: "delete-link" %>
         </td>
       </tr>
     <% end %>

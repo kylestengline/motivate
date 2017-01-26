@@ -29,30 +29,6 @@ $(document).ready(function(){
 <center>
   <button id="liking" type="submit" data-id="<%= @post.id %>">Like</button>
 </center>
-
-<!--<%#= form_for [@post, @comment] do |f| %>
-  <%# if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%#= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-      <%# @comment.errors.full_messages.each do |message| %>
-        <li><%#= message %></li>
-      <%# end %>
-      </ul>
-    </div>
-  <%# end %>
-
-  <div class="field">
-    <%#= f.label :content %>
-    <%#= f.text_area :content %>
-  </div>
-
-  <div class="actions">
-    <%#= f.submit %>
-  </div>
-  <%# end %>-->
-
 <br>
 <center>
   <h3>

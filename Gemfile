@@ -20,6 +20,7 @@ gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'faker'
 gem 'warden'
+gem 'byebug'
 
 
 # Use jquery as the JavaScript library

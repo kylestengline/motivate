@@ -57,7 +57,7 @@ class Admin::PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     if @post.destroy
-      flash[:notice] = 'Post was successfully destroyed.'
+      flash[:notice] = "Post was successfully destroyed."
       redirect_to admin_posts_path
     end
   end

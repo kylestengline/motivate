@@ -20,7 +20,6 @@ gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'faker'
 gem 'warden'
-gem 'byebug'
 
 
 # Use jquery as the JavaScript library
@@ -44,6 +43,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'byebug'
+  gem 'rb-readline'
 end
 
 group :development do

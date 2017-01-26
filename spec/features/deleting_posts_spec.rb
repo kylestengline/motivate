@@ -9,7 +9,7 @@ RSpec.feature "Deleting Posts" do
     login(administrator)
 
     click_link "Admin Page"
-    page.all(".the-actions tr").each do |tr|
+    page.all("tr.the-actions").each do |tr|
       if tr.has_selector?('a[href*="delete-link"]')
         click_link "Delete"
       end

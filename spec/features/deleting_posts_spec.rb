@@ -10,13 +10,11 @@ RSpec.feature "Deleting Posts" do
 
     click_link "Admin Page"
     page.all("tr.the-actions").each do |tr|
-      if tr.has_selector?('a[href*="delete-link"]')
-        click_link "Delete"
-      end
+      click_link "Delete" if tr.has_selector?('a[href*="delete-link"]')
     end
 
     expect(page.current_path).to eq(admin_posts_path)
-    binding.pry
+#    binding.pry
     expect(page).to have_content "Post was successfully destroyed."
   end
 end

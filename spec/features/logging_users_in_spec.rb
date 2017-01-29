@@ -13,7 +13,6 @@ RSpec.feature "Logging in" do
     fill_in "Password", with: administrator.password
     click_on "Log Me In. Please and Thanks!"
 
-    # fails b/c redirecting to the root_path and not admin_posts_path when logging in
     expect(page).to have_content "Successfully Logged In!"
     expect(page).to have_content "Admin Page"
     expect(page).to have_link "Motivation"

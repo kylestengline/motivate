@@ -20,7 +20,7 @@ RSpec.feature "Updating Posts" do
     click_on "Update Post"
 
     expect(page).to have_content "Post was successfully updated."
-    expect(page).to have_current_path(admin_post_path(post))
+    expect(page).to have_current_path(post_path(post))
   end
 
   scenario "admins can update posts" do

@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
       # ContactMailer.contact_email(@contact).deliver_now
 
   		flash[:notice] = "Submission Successful!"
-  		redirect_to posts_path
+  		redirect_to root_path
   	else
   		render :new
   	end
@@ -22,6 +22,7 @@ class ContactsController < ApplicationController
   private
 
     def contact_params
-      params.require(:contact).permit(:name, :email, :message)
+      params.require(:contact)
+        .permit(:name, :email, :message)
     end
 end

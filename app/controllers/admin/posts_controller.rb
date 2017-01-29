@@ -43,7 +43,7 @@ class Admin::PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     if @post.update(post_params)
-       redirect_to admin_post_path(@post)
+       redirect_to post_path(@post)
        flash[:notice] = 'Post was successfully updated.'
     else
       flash[:danger] = 'Post not updated' 

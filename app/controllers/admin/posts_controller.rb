@@ -42,14 +42,12 @@ class Admin::PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to admin_posts_path, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.update(post_params)
+       redirect_to admin_posts_path 
+       flash[:notice] = 'Post was successfully updated.'
+    else
+      flash[:danger] = 'Post not updated' 
+      render :edit
     end
   end
 

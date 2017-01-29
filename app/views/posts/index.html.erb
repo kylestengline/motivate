@@ -23,7 +23,7 @@
       </tr>
     <% end %>
   </tbody>
-  <% if logged_in? %>
+  <% if admin? %>
     <center>
       <h3>
         <%= link_to 'Logout', logout_path, mehtod: :delete %>

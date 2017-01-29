@@ -3,16 +3,14 @@ require 'rails_helper'
 RSpec.feature "Updating Posts" do
   let(:administrator) {Administrator.create(name: "My Name", email: "my@example.com", password: "password" )}
 
-  let(:post) {Post.create!(content: "The Content created", votes: 1, story: "My story", author: "A Name")}
+  let!(:post) {Post.create!(content: "The Content created", votes: 1, story: "My story", author: "A Name")}
 
   scenario "admins can update posts" do
     login(administrator)
 
     click_link "Admin Page"
 
-    page.all("tr.the-actions").each do |tr|
-      click_on "Edit" if tr.has_selector?('a[href*="edit-link"]')
-    end
+    click_on "Edit"
 
     expect(current_path).to eq(edit_admin_post_path(post))
 

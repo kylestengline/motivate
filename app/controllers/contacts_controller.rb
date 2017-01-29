@@ -15,6 +15,7 @@ class ContactsController < ApplicationController
   		flash[:notice] = "Submission Successful!"
   		redirect_to root_path
   	else
+      flash[:danger] = "Unsuccessful Submission"
   		render :new
   	end
   end

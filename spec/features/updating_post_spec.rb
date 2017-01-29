@@ -23,7 +23,7 @@ RSpec.feature "Updating Posts" do
     expect(page).to have_current_path(post_path(post))
   end
 
-  scenario "admins can update posts" do
+  scenario "admins cannot update posts" do
     login(administrator)
 
     click_link "Admin Page"

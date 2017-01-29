@@ -1,27 +1,49 @@
 <center><%= form_for @contact, method: :post do |f| %>
+  <% if @contact.errors.any? %>
+    <center>
+      <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-<div id="container">
+        <ul>
+          <% @contact.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+          <p id="notice"><%= flash[:danger] %></p>
+          <script type="text/javascript">
+            $(document).ready(function(){
+              setTimeout(function(){
+                $('#notice').remove();
+              }, 1000);
+            })
+          </script>
+        </ul>
+      </div>
+    </center>
+  <% end %>
+
+  <div id="container">
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :message %>
+      <%= f.text_area :message %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Get in Touch" %>
+    </div></center>
+
   </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :message %>
-    <%= f.text_area :message %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Get in Touch" %>
-  </div></center>
-
-</div>
 <% end %>
 
 <link rel="stylesheet" type="text/css" href="/css/contact.css">

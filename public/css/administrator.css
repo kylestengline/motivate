@@ -69,7 +69,7 @@ label {
     border-radius: 4px;
     margin-left: -10px;
     line-height: 2em;
-    width: 15em;
+    text-align: center;
   }
 
   form {
@@ -80,5 +80,3 @@ label {
     margin-left: 20px;
   }
 } 
-
-

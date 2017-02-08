@@ -11,7 +11,7 @@ RSpec.feature "Logging Out" do
 
     fill_in "Email", with: administrator.email
     fill_in "Password", with: administrator.password
-    click_on "Log Me In. Please and Thanks!"
+    click_on "Log In"
   end
 
   scenario "logged in users can log out" do

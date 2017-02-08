@@ -15,9 +15,6 @@ RSpec.feature "Like feature" do
 
     click_on "Like"
 
-#    xhr :post, :create, votes: post.votes
-#    expect { post.votes }.to change{post.votes}.from(1).to(2)
-#    expect(page).not_to have_content "Like"
   end
 end
 

@@ -10,12 +10,12 @@ RSpec.describe PostsController, :type => :controller do
     context "a user can vote on a post" do
       it "increments the number of votes" do
 
-        post :vote, post1: { votes: post1.votes }, 
-          params: { id: post1.id },
-          xhr: true
-
-        expect { post1.votes }.to change{post1.votes}.by(1)
-
+        expect do
+          post :vote, post1: { votes: post1.votes }, 
+            params: { id: post1.id },
+              xhr: true
+        end.to change { post1.reload.votes }.by(1)
+        
       end
     end
   end

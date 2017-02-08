@@ -64,10 +64,11 @@ label {
   }
 
   .submit-button {
-    font-size: 15px;
+    font-size: 18px;
     padding: 0;
+    width: 50%;
     border-radius: 4px;
-    margin-left: -10px;
+    margin-left: 25px;
     line-height: 2em;
     text-align: center;
   }

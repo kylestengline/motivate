@@ -13,7 +13,9 @@ RSpec.feature "Like feature" do
     expect(page).to have_button "Like"
     expect(page).to have_current_path post_path(post.id)
 
-    click_on "Like"
+    click_button "Like"
+
+    expect { post.votes }.to change{post.votes}.by(1)
 
   end
 end

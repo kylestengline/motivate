@@ -58,6 +58,27 @@ label {
 			padding: 10px;
 			display: inline-block;
 		}
+
+  #session_email, #session_password {
+    width: 100%;
+  }
+
+  .submit-button {
+    font-size: 15px;
+    padding: 0;
+    border-radius: 4px;
+    margin-left: -10px;
+    line-height: 2em;
+    width: 15em;
+  }
+
+  form {
+    margin-right: 25px;
+  }
+
+  label {
+    margin-left: 20px;
+  }
 } 
 
 

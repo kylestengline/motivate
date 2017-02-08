@@ -92,32 +92,52 @@ div.actions {
 
 @media screen and (max-width: 500px) {
 
-	#contact_name {
-	width: 130px;
+	#contact_name, #contact_email, #contact_message {
+	width: 100%;
 	font-size: 12px;
-	padding: 2px;
+	padding: 5px;
+  margin-left: -5px;
 }
 
-#contact_email {
-	width: 130px;
-	font-size: 12px;
-	padding: 2px;
+  #contact_message {
+    height: 130px;
+  }
+
+  label {
+    padding-bottom: 3%;
+  }
+
+  h1 {
+    padding-bottom: 15px;
+  }
+
+  div#error_explanation {
+   width: 100%;
+   height: auto;
+   margin-top: 50px;
+   border: 2px solid red;
+   padding: 0px;
+   padding-bottom: 0;
+   background-color: #f0f0f0;
+  }
+
+  div#error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: -20px;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  div#error_explanation ul li {
+    font-size: 15px;
+    list-style: square;
+    padding: 5px;
+  }
+
+  ul {
+    color: black;
+  }
 }
-
-#contact_message {
-	width: 250px;
-	height: 110px;
-	font-size: 15px;
-	margin-left: -18px;
-}
-
-h1 {
-	padding-top: 20px;
-}
-
-}
-
-
-
-
-

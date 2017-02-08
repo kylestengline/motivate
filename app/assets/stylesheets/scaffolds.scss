@@ -53,18 +53,13 @@ div {
   color: green;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
 #error_explanation {
   width: 450px;
+  height: 150px;
+  margin-top: 40px;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
-  margin-bottom: 20px;
   background-color: #f0f0f0;
 
   h2 {
@@ -79,7 +74,8 @@ div {
   }
 
   ul li {
-    font-size: 12px;
+    font-size: 18px;
+    padding: 4px;
     list-style: square;
   }
 }

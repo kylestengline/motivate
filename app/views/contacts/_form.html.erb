@@ -24,23 +24,23 @@
 
   <div id="container">
 
-    <div class="field">
-      <%= f.label :name %>
+    <div class="name-field">
+      <%= f.label :name, class: "name-label" %>
       <%= f.text_field :name %>
     </div>
 
-    <div class="field">
-      <%= f.label :email %>
+    <div class="email-field">
+      <%= f.label :email, class: "email-label" %>
       <%= f.email_field :email %>
     </div>
 
-    <div class="field">
-      <%= f.label :message %>
+    <div class="message-field">
+      <%= f.label :message, class: "message-label" %>
       <%= f.text_area :message %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Get in Touch" %>
+      <%= f.submit "Get in Touch", class: "submit-button" %>
     </div></center>
 
   </div>

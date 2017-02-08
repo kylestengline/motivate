@@ -8,3 +8,4 @@ def login(user)
   fill_in "Password", with: administrator.password
   click_on "Log In"
 end
+

@@ -12,7 +12,7 @@ RSpec.describe PostsController, :type => :controller do
 
         post :vote, post1: { votes: post1.votes }, 
           params: { id: post1.id },
-          xhr: true  
+          xhr: true
 
         expect { post1.votes }.to change{post1.votes}.by(1)
 

@@ -10,7 +10,6 @@ class Admin::PostsController < ApplicationController
 
   def index
     @posts = Post.all
-   # @administrator = Administrator.find(params[:id])
   end
 
   def show

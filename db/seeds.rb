@@ -17,14 +17,14 @@ Administrator.create!(
 	password: ENV["ADMINISTRATOR_PASSWORD"]
 )
 
-15.times do |user| 
-  user = User.create!(
-      user_name: Faker::Name.first_name,
-      email: Faker::Internet.free_email,
-      password: 'user',
-    )
-  user.save!
-end
+#15.times do |user| 
+#  user = User.create!(
+#      user_name: Faker::Name.first_name,
+#      email: Faker::Internet.free_email,
+#      password: 'user',
+#    )
+#  user.save!
+#end
 
 Post.create!([
 	{author: "Earl Nightingale", content: "When you judge others, you do not define them; you define yourself.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
@@ -39,20 +39,20 @@ Post.create!([
 	{author: "George M. Moore Jr.", content: "A winner is just a loser who tried one more time.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
 	{author: "Japanese Proverb", content: "Fall down seven times, get up eight.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
 	{author: "Napoleon Hill", content: "Nothing can be called failure until you accept it as such.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph},
-	{author: "Winston Churchill", content: "If you're going through hell keep going.", administrator_id: 1, votes: Faker::Number.number(1)}, 
+	{author: "Winston Churchill", content: "If you're going through hell keep going.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
 	{author: "Jim Rohn", content: "Don't wish it were easier, wish you were better.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}, 
 	{author: "Socrates", content: "The secret of change is to focus all of your energy, not on fighting the old, but on building the new.", administrator_id: 1, votes: Faker::Number.number(1), story: Faker::Lorem.paragraph}
 	])
 
-15.times do |comment| 
-  comment = Comment.create!(
-    post_id: rand(1..15), 
-    user_id: rand(1..15), 
-    content: Faker::Lorem.paragraph,
-    votes: Faker::Number.number(1)
-    )
-  comment.save!
-end
+#15.times do |comment| 
+#  comment = Comment.create!(
+#    post_id: rand(1..15), 
+#    user_id: rand(1..15), 
+#    content: Faker::Lorem.paragraph,
+#    votes: Faker::Number.number(1)
+#    )
+#  comment.save!
+#end
 
 p "Created #{Administrator.count} Administrators"
 p "Created #{User.count} Users"
